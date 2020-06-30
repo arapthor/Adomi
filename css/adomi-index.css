@@ -93,8 +93,10 @@ nav>h1{
     z-index: 6;
 }
 .UlNavPrincipal{
+    margin-right: 38.8%;
     list-style: none;
     display: flex;
+    
 }
 .UlNavPrincipal>li,.UlNavPrincipal>a{
     padding: 0 7px;
@@ -116,7 +118,7 @@ nav>h1{
         font-size: 16px;
         position: absolute;
         background: rgba(169, 169, 169, 0.527);
-        left: 545px;
+        left: 40.5%;
         top: -348px;
         transform:translateY(0);
         transition: transform 0.5s;
@@ -142,7 +144,7 @@ nav>h1{
         font-size: 16px;
         position: absolute;
         background: rgba(169, 169, 169, 0.527);
-        left: 462px;
+        left: 34.5%;
         top: -406px;
         transform:translateY(0);
         transition: transform 0.5s;
@@ -168,7 +170,7 @@ nav>h1{
         font-size: 16px;
         position: absolute;
         background: rgba(169, 169, 169, 0.527);
-        left: 760px;
+        left: 56.5%;
         top: -210px;
         transform:translateY(0);
         transition: transform 0.5s;
@@ -210,7 +212,6 @@ nav>h1{
     width: 80%;
     height: 65%;
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.664);    
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: auto;
@@ -699,7 +700,7 @@ footer{
 footer>ul{
     list-style: none;
     line-height: 25px;
-    font-size: 8px;
+    font-size: 7px;
     
 }
 footer>ul>h4,.social>h4{
@@ -812,14 +813,48 @@ footer>ul>h4,.social>h4{
         opacity: 0.4;
     }
 
+}
+@media (max-width: 750px){
+    div.MasFrecuentes{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50% 50%;
+        margin-bottom: 3.5em;
+    }
+}
+@media (max-width: 610px){
+    .departamentos{
+        grid-template-columns: repeat(4,1fr) ;
+    }
+    .departamento4{
+        grid-row: 6/7;
+        grid-column: 1/2;
+    }
+    .departamento10{
+        grid-row: 6/7;
+        grid-column: 4/5;
+    }
+    .departamento11{
+        grid-row: 4/6;
+        grid-column: 4/5;
+    }
+    .departamento13{
+        grid-row: 6/7;
+        grid-column: 2/4;
+        background: rgba(109, 59, 245, 0.699);
+    }
+}
+@media (max-width:760px){
+    
     footer{
         display: grid;
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: auto;
         gap: 1.5em;
-        padding: 30px 30px 15px 35px ;
-        font-size: 4px;
+        column-gap: 2.4em;
+        padding: 25px 18px;
+        font-size: smaller;
         justify-items: center;
+        
     }
 
     .social{
@@ -842,6 +877,5 @@ footer>ul>h4,.social>h4{
     }
     .social img{
         width: 30px;
-    }
+    }    
 }
-
