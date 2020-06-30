@@ -1,4 +1,4 @@
-/*   Desplazamiento del Form *//*
+/*  Desplazamiento del Form *//*
 document.querySelector('.pri').addEventListener('click', () =>{document.querySelector('.despla').classList.toggle('zable');});*/
 /*  Despliegue del nav  */
 document.querySelector('.Marcas').addEventListener('click', () =>{document.querySelector('.lasMarcas').classList.toggle('show'); document.querySelector('.Marcas').classList.toggle('point');});
