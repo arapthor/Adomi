@@ -96,10 +96,14 @@ nav>h1{
     list-style: none;
     display: flex;
 }
-.UlNavPrincipal>li,.UlNavPrincipal>a{
+.UlNavPrincipal>li,.UlNavPrincipal>a>li{
     padding: 0 7px;
     cursor: pointer;
     border: 2px solid transparent;
+}
+.UlNavPrincipal li:hover{
+    text-shadow: 0 0 15px rgb(255, 255, 255);
+    transition: 0.2s;
 }
 
 .menu{
@@ -691,7 +695,7 @@ footer{
     margin-top: 6em;
     display: flex;
     justify-content: space-between;
-    padding: 40px 150px;
+    padding: 40px 12%;
     letter-spacing: 0.4px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
