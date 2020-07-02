@@ -1,4 +1,4 @@
-/*   Desplazamiento del Form *//*
+/*  Desplazamiento del Form *//*
 document.querySelector('.pri').addEventListener('click', () =>{document.querySelector('.despla').classList.toggle('zable');});*/
 
 /*  Despliegue del nav  */
@@ -9,7 +9,7 @@ document.querySelector('.Productos').addEventListener('click', () =>{document.qu
 document.querySelector('.Ayuda').addEventListener('click', () =>{document.querySelector('.laAyuda').classList.toggle('show'); document.querySelector('.Ayuda').classList.toggle('point');});
 
 /*  Despliegue de Categorias-Departamentos  */
-document.querySelector('.comoamazon').addEventListener('click', () =>{ document.querySelector('.envoltura').classList.toggle('noshow');});
+document.querySelector('.comoamazon, .falso').addEventListener('click', () =>{ document.querySelector('.envoltura').classList.toggle('noshow');});
 
 /*  Menu de mobile */
 document.querySelector('.menu').addEventListener('click', () =>{ document.querySelector('.UlNavPrincipal').classList.toggle('show');console.log('cliqueado')});

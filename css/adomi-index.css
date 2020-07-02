@@ -54,6 +54,20 @@ nav>h1{
     z-index: 999;  
     cursor: pointer;
 }
+h1.falso{
+    display: none;
+    align-items: center;
+    color: white;
+    opacity: 0.35;
+    margin: 10px;
+    font-size: 23.5px;
+    position: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+    z-index: 999;  
+    cursor: pointer;
+    
+}
 .busqueda{
     position: relative;
     display: flex;
@@ -738,41 +752,41 @@ footer>div>ul>h4,.social>h4{
 /*----   Responsive  ----*/
 
 @media (max-width: 1359px){
+    h1.falso{
+        display: flex;
+    }
+    nav>h1{
+        color: transparent;
+    }
+    nav{
+        z-index: 13;
+    }
     .UlNavPrincipal{
         margin-right: 0;
-        transition: 0.5s;
+        transition: 0.6s;
     }
     ul.losProductos,
     ul.lasMarcas,
     ul.laAyuda{
-        display: none;
-    }
-    
-    ul.losProductos.show,
-    ul.lasMarcas.show,
-    ul.laAyuda.show{
-        color: white;
-        font-size: 16px;
-        position: fixed;
-        background: rgba(169, 169, 169, 0.425);
-        left: 0;
-        right: 0;
         top: 52px;
+        width: 100%;
         height: auto;
+        left: 0;
+        flex-wrap: wrap;
+        width: 100%;
         list-style: none;
         text-decoration: none;
         z-index: 13;
-        transform: none;
-        display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
         padding: 0.5em 0 0.5em 0;
+        display: none;
     }
-    ul.losProductos.show li,
-    ul.lasMarcas.show li,
-    ul.laAyuda.show li{
-        display: inline;
+    
+    ul.losProductos li,
+    ul.lasMarcas li,
+    ul.laAyuda li{
         background: rgba(169, 169, 169, 0.315);
         height: 20px;
         margin: 2.5px;
@@ -780,7 +794,71 @@ footer>div>ul>h4,.social>h4{
         align-items: center;
         box-shadow: 0 0 0.9px rgba(0, 0, 0, 0.575);
     }
+    
+    ul.losProductos.show,
+    ul.lasMarcas.show,
+    ul.laAyuda.show{
+        display: flex;
+        transform: none;
+    }        
+
 }
+
+@media (max-width:750px){
+    div.MasFrecuentes{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50% 50%;
+        margin-bottom: 3.5em;
+    }
+    .departamentos>div>h3{
+        font-size: 10px;
+        opacity: 0.4;
+    }
+
+    footer{
+        padding: 40px 9%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        letter-spacing: 0.4px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    footer div{
+        width: 100%;
+        margin-bottom: 2em;
+    }
+    footer>div>ul{
+        width: 33.3%;
+        list-style: none;
+        line-height: 25px;
+        font-size: 7px;
+        margin-left: 2em;
+        justify-content: space-between;
+    }
+    footer>ul>h4,.social>h4{
+        font-size: 19px;
+        color: rgba(0, 0, 0, 0.39);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-bottom: 10px;
+    }
+    .social>h4{
+        height: 20px;
+        grid-column: 1/4;
+        text-align: center;
+    
+    }
+    .social{
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 30% 35% 35%;
+        height: auto;
+        width: 100%;
+        justify-items: center;
+        row-gap: 0.4em;
+    }
+    .social img{
+        width: 35px;   
+}
+
 @media (max-width: 425px){
     
     .BannerPrincipal{
@@ -801,17 +879,16 @@ footer>div>ul>h4,.social>h4{
         justify-content: space-between;
         align-items: center;
         padding: 10px;
-        position: absolute;
-        z-index: 15;
     }    
     .menu{
         display: block;
     }
     .UlNavPrincipal{
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         top: 52px;
         left: -148px;
+        height: 100%;
         color: white;
         font-size: 16px;
         background: rgba(169, 169, 169, 0.644);
@@ -819,8 +896,11 @@ footer>div>ul>h4,.social>h4{
         transition: transform 0.5s;
         list-style: none;
         text-decoration: none;
-        z-index: 16;
+        z-index: 13;
         opacity: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
 
     }
     .UlNavPrincipal>li,.UlNavPrincipal a{
@@ -829,6 +909,36 @@ footer>div>ul>h4,.social>h4{
     .UlNavPrincipal.show{
         transform:translatex(100%);
     }
+    
+    ul.losProductos.show,
+    ul.lasMarcas.show,
+    ul.laAyuda.show,
+    ul.lasMarcas,
+    ul.losProductos,
+    ul.laAyuda{
+        height: 100%;
+        display: block;
+        position: fixed;
+    }
+
+    ul.lasMarcas{width: 139px;}
+    ul.losProductos{width: 192px;}
+    ul.laAyuda{width: 215px;}
+    
+    ul.losProductos li,
+    ul.lasMarcas li,
+    ul.laAyuda li,
+    ul.losProductos.show li,
+    ul.lasMarcas.show li,
+    ul.laAyuda.show li{
+        background: none;
+        height: 20px;
+        padding: 20px 40px;
+        display: block;
+        align-items: center;
+        box-shadow: none;
+    }
+    
     ul.lasMarcas{
         left: -139px;
         top: 52px;
@@ -848,7 +958,7 @@ footer>div>ul>h4,.social>h4{
         top: 52px;
     }
     ul.laAyuda.show{
-        transform:translatex(362px);
+        transform:translatex(calc(148px + 214px));
     }
 
     .container{
@@ -907,62 +1017,10 @@ footer>div>ul>h4,.social>h4{
     }
 
 }
-@media (max-width:750px){
-    div.MasFrecuentes{
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 50% 50%;
-        margin-bottom: 3.5em;
-    }
-    .departamentos>div>h3{
-        font-size: 10px;
-        opacity: 0.4;
-    }
-
-    footer{
-        padding: 40px 9%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        letter-spacing: 0.4px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }
-    footer div{
-        width: 100%;
-        margin-bottom: 2em;
-    }
-    footer>div>ul{
-        width: 33.3%;
-        list-style: none;
-        line-height: 25px;
-        font-size: 7px;
-        margin-left: 2em;
-        justify-content: space-between;
-    }
-    footer>ul>h4,.social>h4{
-        font-size: 19px;
-        color: rgba(0, 0, 0, 0.39);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin-bottom: 10px;
-    }
-    .social>h4{
-        height: 20px;
-        grid-column: 1/4;
-        text-align: center;
-    
-    }
-    .social{
-        grid-template-columns: repeat(3,1fr);
-        grid-template-rows: 30% 35% 35%;
-        height: auto;
-        width: 100%;
-        justify-items: center;
-        row-gap: 0.4em;
-    }
-    .social img{
-        width: 35px;   
-}
 
 @media (max-width: 360px){
     div.departamentos{
-        font-size: 8px;}
+        font-size: 8px;
+        gap: 0;
     }
+}
