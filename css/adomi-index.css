@@ -920,7 +920,13 @@ footer>div>ul>h4,.social>h4{
         display: block;
         position: fixed;
     }
-
+    .UlNavPrincipal,
+    ul.lasMarcas,
+    ul.losProductos,
+    ul.laAyuda{
+        left:250px;
+    }
+    
     ul.lasMarcas{width: 139px;}
     ul.losProductos{width: 192px;}
     ul.laAyuda{width: 215px;}
