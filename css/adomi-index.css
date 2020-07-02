@@ -887,7 +887,7 @@ footer>div>ul>h4,.social>h4{
         flex-direction: column;
         position: fixed;
         top: 52px;
-        left: -148px;
+        left: -250px;
         height: 100%;
         color: white;
         font-size: 16px;
@@ -920,12 +920,6 @@ footer>div>ul>h4,.social>h4{
         display: block;
         position: fixed;
     }
-    .UlNavPrincipal,
-    ul.lasMarcas,
-    ul.losProductos,
-    ul.laAyuda{
-        left:-250px;
-    }
     
     ul.lasMarcas{width: 139px;}
     ul.losProductos{width: 192px;}
@@ -946,21 +940,21 @@ footer>div>ul>h4,.social>h4{
     }
     
     ul.lasMarcas{
-        left: -139px;
+        left: -250px;
         top: 52px;
     }
     ul.lasMarcas.show{
         transform:translatex(calc(148px + 139px));
     }
     ul.losProductos{
-        left: -192px;
+        left: -250px;
         top: 52px;
     }
     ul.losProductos.show{
         transform:translatex(calc(148px + 192px));
     }
     ul.laAyuda{
-        left: -215px;
+        left: -250px;
         top: 52px;
     }
     ul.laAyuda.show{
