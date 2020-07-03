@@ -907,7 +907,7 @@ footer>div>ul>h4,.social>h4{
         padding: 20px 40px;
     }    
     .UlNavPrincipal.show{
-        transform:translatex(100%);
+        transform:translatex(250px);
     }
     
     ul.losProductos.show,
@@ -944,21 +944,21 @@ footer>div>ul>h4,.social>h4{
         top: 52px;
     }
     ul.lasMarcas.show{
-        transform:translatex(calc(148px + 139px));
+        transform:translatex(calc(148px + 250px));
     }
     ul.losProductos{
         left: -250px;
         top: 52px;
     }
     ul.losProductos.show{
-        transform:translatex(calc(148px + 192px));
+        transform:translatex(calc(148px + 250px));
     }
     ul.laAyuda{
         left: -250px;
         top: 52px;
     }
     ul.laAyuda.show{
-        transform:translatex(calc(148px + 214px));
+        transform:translatex(calc(148px + 250px));
     }
 
     .container{
