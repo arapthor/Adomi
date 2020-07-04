@@ -882,7 +882,8 @@ footer>div>ul>h4,.social>h4{
     .UlNavPrincipal{
         position: fixed;
         top: 52px;
-        left: -148px;
+        width: 45%;
+        left: -45%;
         height: 100%;
         color: white;
         font-size: 16px;
@@ -911,10 +912,7 @@ footer>div>ul>h4,.social>h4{
     .UlNavPrincipal.show{
         transform:translatex(100%);
     }
-    .point p{
-        background:rgba(255, 255, 255, 0.363) 0.8s;
-
-    }
+    
     
     .lasMarcas,
     .losProductos,
@@ -947,7 +945,9 @@ footer>div>ul>h4,.social>h4{
     ul.losProductos.show li:hover,
     ul.lasMarcas.show li:hover,
     ul.laAyuda.show li:hover,
-    .UlNavPrincipal>li>p:hover{
+    .UlNavPrincipal>li>a:hover,
+    .UlNavPrincipal>li>p:hover,
+    .point p{
         background:rgba(255, 255, 255, 0.363);
         transition: 0.8s;
     }
