@@ -776,7 +776,6 @@ footer>div>ul>h4,.social>h4{
         z-index: 13;
         align-items: center;
         justify-content: center;
-        flex-wrap: wrap;
         padding: 0.5em 0 0.5em 0;
         display: none;
     }
@@ -881,7 +880,6 @@ footer>div>ul>h4,.social>h4{
         display: block;
     }
     .UlNavPrincipal{
-        flex-direction: column;
         position: fixed;
         top: 52px;
         left: -148px;
@@ -898,18 +896,61 @@ footer>div>ul>h4,.social>h4{
         display: flex;
         flex-direction: column;
         justify-content: start;
+        overflow-y: scroll;
 
     }
-    .UlNavPrincipal>li{
+    .UlNavPrincipal>li>p,.UlNavPrincipal>li>a{
         padding: 20px 40px;
-    }    
+        display: flex;
+        flex-direction: column;
+        
+    }   
+    .UlNavPrincipal>li,.UlNavPrincipal>a{
+        padding: 0;}
+
     .UlNavPrincipal.show{
         transform:translatex(100%);
+    }
+    .point p{
+        background:rgba(255, 255, 255, 0.363) 0.8s;
+
     }
     
     .lasMarcas,
     .losProductos,
     .laAyuda{display: none;}
+
+    ul.losProductos.show,
+    ul.lasMarcas.show,
+    ul.laAyuda.show{
+        background: none;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 0;
+        left: 0;
+        text-align: left;
+        
+    }
+    ul.losProductos.show li,
+    ul.lasMarcas.show li,
+    ul.laAyuda.show li{
+        padding: 15px 8px;
+        margin: 0;
+        width: 100%;
+        font-size: 12px;
+    }
+    
+    ul.losProductos.show li:hover,
+    ul.lasMarcas.show li:hover,
+    ul.laAyuda.show li:hover,
+    .UlNavPrincipal>li>p:hover{
+        background:rgba(255, 255, 255, 0.363);
+        transition: 0.8s;
+    }
 
     .container{
         width: 95%;
