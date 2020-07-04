@@ -68,6 +68,8 @@ h1.falso{
     cursor: pointer;
     
 }
+h1.falso.show{display: flex;}
+
 .busqueda{
     position: relative;
     display: flex;
@@ -752,12 +754,7 @@ footer>div>ul>h4,.social>h4{
 /*----   Responsive  ----*/
 
 @media (max-width: 1359px){
-    h1.falso{
-        display: flex;
-    }
-    nav>h1{
-        color: transparent;
-    }
+    
     nav{
         z-index: 13;
     }
@@ -903,63 +900,16 @@ footer>div>ul>h4,.social>h4{
         justify-content: start;
 
     }
-    .UlNavPrincipal>li,.UlNavPrincipal a{
+    .UlNavPrincipal>li{
         padding: 20px 40px;
     }    
     .UlNavPrincipal.show{
         transform:translatex(100%);
     }
     
-    ul.losProductos.show,
-    ul.lasMarcas.show,
-    ul.laAyuda.show,
-    ul.lasMarcas,
-    ul.losProductos,
-    ul.laAyuda{
-        height: 100%;
-        display: block;
-        position: fixed;
-    }
-
-    ul.lasMarcas{width: 139px;}
-    ul.losProductos{width: 192px;}
-    ul.laAyuda{width: 215px;}
-    
-    ul.losProductos li,
-    ul.lasMarcas li,
-    ul.laAyuda li,
-    ul.losProductos.show li,
-    ul.lasMarcas.show li,
-    ul.laAyuda.show li{
-        background: none;
-        height: 20px;
-        padding: 20px 40px;
-        display: block;
-        align-items: center;
-        box-shadow: none;
-    }
-    
-    ul.lasMarcas{
-        left: -139px;
-        top: 52px;
-    }
-    ul.lasMarcas.show{
-        transform:translatex(calc(148px + 139px));
-    }
-    ul.losProductos{
-        left: -192px;
-        top: 52px;
-    }
-    ul.losProductos.show{
-        transform:translatex(calc(148px + 192px));
-    }
-    ul.laAyuda{
-        left: -215px;
-        top: 52px;
-    }
-    ul.laAyuda.show{
-        transform:translatex(calc(148px + 214px));
-    }
+    .lasMarcas,
+    .losProductos,
+    .laAyuda{display: none;}
 
     .container{
         width: 95%;
