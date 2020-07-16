@@ -5,228 +5,124 @@
 }
 
 body{
+    height: 100%;
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
     background: url(hideout.svg);
     background-size: 13%;
     
 
 }
-
 a{
     text-decoration: none;
     color: white;
 }
 
-/*  Navegador  */
-
-.BannerPrincipal{
-    background: url(site.jpg) no-repeat center center/cover;
-    width: 100%;
-    height: 400px;
-    margin-bottom: 1.4em;
-    z-index: 1;
-}
-.verzul{
-    position: absolute;
-    background: rgba(32, 178, 171, 0.308);
-    width: 100%;
-    height: 400px;
-    z-index: 2;
-}
+/*  Barra-Navegador*/
 nav{
+    position: fixed;
     width: 100%;
-    color: white;
-    background-color: black;
-    opacity: 0.35;
+    top: 0;
+    left: 0;
+    height: 50px;
+    padding: 0 1%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    position: fixed;
-    z-index: 15;
+    background: rgba(17, 17, 17, 0.493);
+    z-index: 20;
+    mix-blend-mode: multiply;
 }
-
-nav>h1{
+.logo{
+    color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 2px;
-    z-index: 999;  
-    cursor: pointer;
-}
-h1.falso{
-    display: none;
-    align-items: center;
-    color: white;
-    opacity: 0.35;
-    margin: 10px;
     font-size: 23.5px;
-    position: fixed;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 2px;
-    z-index: 999;  
+    letter-spacing: 1.2px;
+    font-weight: 800;
     cursor: pointer;
     
 }
-h1.falso.show{display: flex;}
-
-.busqueda{
-    position: relative;
-    display: flex;
-    background: rgba(255, 255, 255, 0.185);
-    justify-content: center;
-    padding: 0 5px;
-    width: 504px;
-    height: 35px;
-    
-    z-index: 5;
-}
-.buscador{
-    
-    margin-top: 200px;
-    width: 100%;
+.opciones{
+    font-size: 17;
+    font-weight: 500;
     position: absolute;
-    padding: 0;
     display: flex;
+    width: 100%;
     justify-content: center;
+}
+.opciones a{
+    padding: 5px;
+    margin: 0 6px;
+}
+
+/*  Header-Banner Principal  */
+
+.mainbanner{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64vh;
+    background: url(../img/site.jpg)no-repeat center center/cover;
+}
+.cobertura{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 170, 163, 0.377);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.barradebusqueda{
+    width: 38%;
+    height: 35px;
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    background: rgba(221, 220, 220, 0.205);
+
+}
+.barradebusqueda i{
+    font-size: 28px;
+    padding: 0 5px;
+    color: #111;
+    text-align: center;
+    opacity: 0.8;
     
 }
-.busqueda>input{
+.barradebusqueda:hover i{
+    opacity: 1;
+}
+.barradebusqueda input{
+    width: 90%;
+    height: 70%;
+    padding: 0 8px;
     background: transparent;
     border: none;
-    margin: 5px 0;
-    width: 449px;
-    height: 25px;
-    color: white;
-    padding: 0 5px;
-    border-left: 1px solid rgba(0, 0, 0, 0.356);
-}
-.primer{
-    background: transparent;
-    width: 25px;
-    margin-right: 9px;
-    margin-top: 2px;
-    z-index: 6;
-}
-.UlNavPrincipal{
-    margin-right: 38.7%;
-    justify-content: center;
-    list-style: none;
-    display: flex;
-    
-}
-.UlNavPrincipal>li,.UlNavPrincipal>a{
-    padding: 0 7px;
-    cursor: pointer;
-    border: 2px solid transparent;
+    border-left: 1px solid rgba(61, 61, 61, 0.61);
 }
 
-.menu{
-    width: 35px;
-    position: absolute;
-    top: 8.5px;
-    right: 9px;
-    opacity: 1;
-    z-index: 16;
-    display: none;
-}
-    ul.lasMarcas{
-        color: white;
-        font-size: 16px;
-        position: absolute;
-        background: rgba(169, 169, 169, 0.527);
-        left: 40.75%;
-        top: -348px;
-        transform:translateY(0);
-        transition: transform 0.5s;
-        list-style: none;
-        text-decoration: none;
-        z-index: 13;
-    }
-    ul.lasMarcas>li{
-        padding: 20px 40px;
-        cursor: pointer;
-    }
-    ul.lasMarcas.show{
-        transform:translateY(400px);
-        position: fixed;
-    }
-    .Marcas.point{
-        border-left:2px solid rgba(169, 169, 169, 0.527);
-        border-right:2px solid rgba(169, 169, 169, 0.527);
-    }
-
-
-    ul.losProductos{
-        color: white;
-        font-size: 16px;
-        position: absolute;
-        background: rgba(169, 169, 169, 0.527);
-        left: 34.7%;
-        top: -406px;
-        transform:translateY(0);
-        transition: transform 0.5s;
-        list-style: none;
-        text-decoration: none;
-        z-index: 13;
-    }
-    ul.losProductos>li{
-        padding: 20px 40px;
-        cursor: pointer;
-    }
-    ul.losProductos.show{
-        transform:translateY(458px);
-        position: fixed;
-    }
-    .Productos.point{
-        border-left:2px solid rgba(169, 169, 169, 0.527);
-        border-right:2px solid rgba(169, 169, 169, 0.527);
-    }
-
-    
-    ul.laAyuda{
-        color: white;
-        font-size: 16px;
-        position: absolute;
-        background: rgba(169, 169, 169, 0.527);
-        left: 56.75%;
-        top: -210px;
-        transform:translateY(0);
-        transition: transform 0.5s;
-        list-style: none;
-        text-decoration: none;
-        z-index: 13;
-    }
-    ul.laAyuda>li{
-        padding: 20px 40px;
-        cursor: pointer;
-    }
-    ul.laAyuda.show{
-        transform:translateY(262px);
-        position: fixed;
-    }
-    .Ayuda.point{
-        border-left:2px solid rgba(169, 169, 169, 0.527);
-        border-right:2px solid rgba(169, 169, 169, 0.527);
-    }
-
-
-/*  Departamentos  */
+/*  Menu por departamentos  */
 .envoltura{
     top: 0;
     left: -100%;
-    position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.664);    
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 14;
+    z-index: 15;
     position: fixed;
-
     transform: translateX(0);
     transition: transform 0.8s ease-in-out;
+}
+.envoltura.noshow{
+    transform: translateX(100%);
 }
 .departamentos{
     position: relative;
@@ -236,19 +132,17 @@ h1.falso.show{display: flex;}
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: auto;
-    
     gap: 0.3em;
     z-index: 14;
-}
-.envoltura.noshow{
-    transform: translateX(100%);
 }
 .departamentos>div{
     display: flex;
     align-items: center;
+    transition: 0.8s;
 }
 .departamentos>div:hover{
     opacity: 0.5;
+    transition: 0.4s;
 }
 .departamentos>div>h3{
     width: 100%;
@@ -256,7 +150,7 @@ h1.falso.show{display: flex;}
     opacity: 0.2;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 22px;
-
+    cursor: default;
 }
 .departamento1{
     background: rgba(109, 59, 245, 0.699);
@@ -324,386 +218,169 @@ h1.falso.show{display: flex;}
     grid-row: 5/6;
 }
 
-/*   Mas Frecuentes   */
-    
-.container{
-    width: 80%;
+/*  Frecuentes  */
+
+.Frecuentes{
     margin: auto;
-    color: black;
-    overflow: hidden;
-}
-div.MasFrecuentes{
+    width: 80%;
     display: grid;
-    grid-template-columns:  repeat(4,1fr);
-    grid-auto-rows: auto;
+    grid-template-columns: repeat(4,1fr);
     gap: 1.5em;
     padding: 0 20px;
-}
-div.MasFrecuentes>section{
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 200px 490px;
-    gap: 1.5em;
-    box-shadow: 7px 4px 7px 5px rgba(128, 128, 128, 0.842);
+    margin-bottom: 150px;
     
 }
-div.MasFrecuentes>section>article{
+.Frecuentes section{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 30px rgba(17, 17, 17, 0.678);
 }
-div.MasFrecuentes>section>article.Cables{
+.Frecuentes section article{
     width: 100%;
     height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.Frecuentes section.cables article{
     background: rgb(57, 140, 207);
 }
-div.MasFrecuentes>section.Cables>ul>li>div{
+.Frecuentes section.rams article{
+    background: rgb(139, 97, 253);
+}
+.Frecuentes section.discos article{
+    background: lightseagreen;
+}
+.Frecuentes section.perifericos article{
+    background: rgb(32, 83, 178);
+}
+.Frecuentes section article img{
+    width: 55%;
+    height: 55%;
+    opacity: 0.3;
+}
+.Frecuentes section ul{
+    list-style: none;
+    width: 100%;
+    margin: 25px 0;
+
+}
+.Frecuentes section ul li{
+    width: 100%;
+    height: 150px;
+    margin: 8px 0;
+    display: flex;
+}
+.Frecuentes section ul li .foto{
+    width: 65%;
+}
+.Frecuentes section ul li .viñeta{
+    width: 35%;
+    opacity: 0.95;
+}
+
+.Frecuentes section.cables ul li .viñeta{
     background: rgb(57, 140, 207);
     border-right: 5.3px solid rgb(47, 117, 173);
 }
-div.MasFrecuentes>section>article.RAMs{
-    width: 100%;
-    height: 200px;
+.Frecuentes section.rams ul li .viñeta{
     background: rgb(139, 97, 253);
+    border-right: 5.3px solid rgb(115, 65, 252);
 }
-div.MasFrecuentes>section.RAMs>ul>li>div{
-    background: rgba(109, 59, 245, 0.774);
-    border-right: 5.3px solid rgba(109, 59, 245, 0.829);
-    opacity: 1;
-}
-div.MasFrecuentes>section>article.Discos{
-    width: 100%;
-    height: 200px;
-    background: lightseagreen;
-}
-div.MasFrecuentes>section.Discos>ul>li>div{
+.Frecuentes section.discos ul li .viñeta{
     background: lightseagreen;
     border-right: 5.3px solid rgb(26, 139, 134);
 }
-div.MasFrecuentes>section>article.Perifericos{
-    width: 100%;
-    height: 200px;
-    background: rgb(32, 83, 178);
-}
-div.MasFrecuentes>section.Perifericos>ul>li>div{
+.Frecuentes section.perifericos ul li .viñeta{
     background: rgb(32, 83, 178);
     border-right: 5.3px solid rgb(28, 73, 156);
 }
-div.MasFrecuentes>section>ul{
-    list-style: none;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(3,150px);
-    gap: 0.5em;
-}
-div.MasFrecuentes>section>ul>li{
-    display: grid;
-    grid-template-columns: 65% 35%;
-    grid-template-rows: 100%;
-    gap: 1.5px;
-    overflow: hidden;
-}
-div.MasFrecuentes>section>ul>li>div.foto{
-    background: url(disco.png) no-repeat center center/cover;
+
+.Frecuentes section ul li .foto{
+    background: url(../img/disco.png) no-repeat center center/cover;
     border: none;
     opacity: 0.6;
     
 }
-div.MasFrecuentes>section>ul>li>div{
-    opacity: 0.965;
-}
-div.MasFrecuentes>section>ul>li:hover div{
+.Frecuentes section ul li:hover div{
     transition: 0.5s;
     opacity: 1;
 }
 
-div.MasFrecuentes>section>ul>li>div>img{
+.Frecuentes section ul li .foto img{
     width: 100%;
     height: 100%;
 }
-a.mass>p{
-    width: 98%;
-    color: gray;
-    text-align: center;
-    padding: 5px 0;
-    border: 2px solid grey;
-    opacity: 0.6;
-    margin: auto;
-    margin-top: 2em;
-}
-div.MasFrecuentes>section>ul>li>div{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-div.MasFrecuentes>section>ul>li>div>p{
+
+/*  Banners  */
+.banners{
     width: 100%;
-    height: 100%;
-}
-div.MasFrecuentes>section>ul>li>div>p>img{
-    width: 60px;
-    padding-left: 20px;
-    padding-top: 10px;
-    
-    
-}
-
-/*  Banner-tudireccion  */
-
-.banner-tuDireccion{
-    width: 100%;
-    height: 300px;
-    background: url(teclas.jpg) no-repeat center center/cover;
-    color: white;
-    margin: 12em 0 5em 0;
-    overflow: hidden;
-}
-.despla{
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.39)
-}
-.pri{
-    padding: 20px;
-}
-.pri>h2{
-    font-size: 25px;
-    padding: 10px 0 15px 0;
-}
-h2.signeate{
-    font-size: 27px;
-    padding-left: 85px;
-    padding-top: 65px;
-}
-.se{
-    margin: 0;
-    padding-top:30px;
-}
-form{
-    padding-left: 150px;
-    border-left:1.5px solid rgba(128, 128, 128, 0.507);
-}
-form>P{
-    padding: 12px 0;
-}
-form>p>input{
-    border: none;
-    background: rgba(88, 84, 84, 0.397);
-}
-input.envia{
-    margin-right: 3px;
-    background: rgba(0, 255, 128, 0.26);
-    color: rgba(255, 255, 255, 0.452);
-    padding: 4px;
-    width: 180px;
-    border: 1px solid rgba(0, 128, 0, 0.212);
-}
-input.quita{
-    background: rgba(255, 0, 34, 0.26);
-    color: rgba(255, 255, 255, 0.452);
-    padding: 5px;
-    width: 180px;
-    border: 1px solid rgba(128, 0, 28, 0.212);
-}
-.despla{
-    transform: translateX(52%);
-    transition: transform .4s ease-in-out;
-}
-.despla.zable{
-    transform: translateX(0%);
-}
-
-/*  Mas Populares*/
-div.MasPopulares{
-    background:none;
-    overflow: hidden;
-}
-div.Titulo_MasPopulares{
-    background: rgba(109, 59, 245, 0.699);
-    
-    margin-bottom: 0.5em;
-}
-h2.MasPopulares{
-    color: white;
-    margin-top: 4em;
-    padding: 10px;
-    width: auto;
-    text-align: center;
-    animation-name: swan;
-    animation-timing-function: linear;
-    animation-duration: 12s;
-    animation-iteration-count: 0;
-    position: relative;
-}
-
-@keyframes swan{
-    0%{left: 100%;}
-    100%{left: -100%;}
-}
-
-div.ProductosPopulares{
-    width: 200%;
-    height: 200px;
-    background: none;
-    display: flex;
-    overflow: hidden;
-
-    animation-name: slider;
-    animation-duration: 25s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-div.ProductosPopulares:hover{
-    animation-play-state: paused;
-}
-@keyframes slider{
-    0%{margin-left: 0;}
-    10%{margin-left: 0;}
-    13%{margin-left: -180.39px;}
-    25%{margin-left: -180.39px;}
-    28%{margin-left: -360.78px;}
-    40%{margin-left: -360.78px;}
-    43%{margin-left: -537.17px;}
-    55%{margin-left: -537.17px;}
-    58%{margin-left: -713.56px;}
-    70%{margin-left: -713.56px;}
-    73%{margin-left: -891.95px;}
-    85%{margin-left: -891.95px;}
-    88%{margin-left: -1074.34px;}
-    100%{margin-left: -1074.34px;}
-}
-div.ProductosPopulares>section{
-    color: white;
-    background: none;
-    width: 172.39px;
-    height: 200px;
-    margin: 0 4px;
-}
-div.ProductosPopulares>section>div.Popular{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-div.ProductosPopulares>section>div.Popular>h4{
-    display: none;
-    background: black;
-    opacity: 0.5;
-    padding: 5px;
-}
-div.ProductosPopulares>section>div.Popular>p{
-    display: none;
-    height: 30%;
-    padding: 5px;
-    font-size: 10px;
-    background: black;
-    opacity: 0.5;
-}
-div.ProductosPopulares>section>div.Popular:hover>p,div.ProductosPopulares>section>div.Popular:hover>h4{
-    display: block;
-}
-div.ProductosPopulares>section>div.Popular>p.precio{
-    background: gray;
-    display: block;
-    opacity: 0.3;;
-    font-size: 30px;
-    font-family: fantasy;
-    text-align: center;
-    padding-top: 10px;
-}
-div.ProductosPopulares>section>div.Popular:hover>p.precio{
-    font-size: 10px;
-    padding: 5px;
-    text-align: right;
     height: auto;
 }
-
-/*  Pre-Order  */
-
-div.Preorder,div.TuPc{
-    margin-top: 3em;
-    background:none;
-}
-div.Titulo_Preorder{
-    background: black;
-    opacity: 0.2;
-    margin-bottom: 0.5em;
-}
-div.Preorder>div.ProductosPopulares>section>div.Popular>p.precio{
-    background: rgba(241, 16, 16, 0.644);
-}
-div.Preorder>div.ProductosPopulares>section>div.Popular>p.disponible{
-    background: rgba(106, 218, 106, 0.651);
-}
-div.Preorder>div.ProductosPopulares>section{
-    background: url(tarjeta.png) no-repeat center center/cover;
-}
-
-/*  For Your PC*/
-
-div.Titulo_TuPc{
-    background: rgba(32, 83, 178, 0.801);
-    color: black;
-    margin-bottom: 0.5em;
-}
-div.Titulo_TuPc>h2{
-    color: white;
-}
-
-
-/*  Fichas de Marcas  */
-
-div.FichasDeMarcas{
-    width: 100%;
-    height: 400px;
-    margin-top: 6em;
+section.banner{
+    position: relative;
+    height: auto;
+    background: #fafafa;
     display: flex;
 }
-.wrapper{
-    background: rgba(255, 255, 255, 0.897);
-    width: 220px;
-    height: 350px;
-    margin: 25px auto;
-    box-shadow: 3px 5px 25px 3px rgba(0, 0, 0, 0.541);
-    border-radius: 10px;
+section.banner:nth-child(1){
+    background: linear-gradient(270deg,rgb(95, 171, 233),rgb(187, 220, 248));
 }
-.ficha1,.ficha2,.ficha3,.ficha4{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+section.banner:nth-child(2){
+    background: linear-gradient(270deg,rgba(232, 234, 235, 0.904),white);
+    flex-direction: row-reverse;
+    text-align: right;
+}
+section.banner:nth-child(3){
+    background: linear-gradient(90deg,rgb(220, 220, 220),white);
+}
+section .imgstock{
+    position: sticky;
+    width: 40%;
+    top: 0;
+    height: 100vh;
+}
+section.banner:nth-child(1) .imgstock{
+    background: url(../img/blackred.jpg)no-repeat center center/cover;
+}
+section.banner:nth-child(2) .imgstock{
+    background:url(../img/aplel.jpg)no-repeat center center/cover;
+}
+section.banner:nth-child(3) .imgstock{
+    background: url(../img/teclablanca.jpg)no-repeat center center/cover;
+}
+section .content{
+    width: 60%;
+   
+}
+section .content .cuadros{
+    margin: auto;
+    margin-top: 30%;
+    margin-bottom: 20%;
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8em;
+}
+section .content .cuadros div.big{
+    grid-column: 1/3;
+    height: 300px;
+}
+section .content div{
     width: 100%;
-}   
-div.FichasDeMarcas>div.wrapper>div>div.color{
-    width: 100%;
-    height: 100px;
-    border-radius: 10px 10px 0 0;
+    height: 200px;
+    background: rgba(231, 229, 229, 0.568);
 }
-div.FichasDeMarcas>div.wrapper>div.ficha1>div.color{
-    background: rgba(147, 112, 216, 0.959);
-}
-div.FichasDeMarcas>div.wrapper>div.ficha2>div.color{
-    background: rgba(0, 128, 128, 0.911);
-}
-div.FichasDeMarcas>div.wrapper>div.ficha3>div.color{
-    background: rgba(169, 169, 169, 0.527);
-}
-div.FichasDeMarcas>div.wrapper>div.ficha4>div.color{
-    background: rgba(32, 83, 178, 0.774);
+section.banner:nth-child(1) .content div{
+    background: rgba(141, 197, 243, 0.993);
+
 }
 
-div.FichasDeMarcas>div.wrapper>div>div.calificacion.color{
-    width: 100%;
-    height: 50px;
-    border-radius: 0 0 10px 10px;
-}
-
-div.FichasDeMarcas>div.wrapper>div>img{
-    position: absolute;
-    width: 130px;
-    margin: 35px 0 0 50px ;
-}
 
 /*  Footer  */
 
@@ -723,19 +400,19 @@ footer div{
     display: flex;
     justify-content: space-between;
 }
-footer>div>ul{
+footer div ul{
     list-style: none;
     line-height: 25px;
     font-size: 7px;
     
 }
-footer>div>ul>h4,.social>h4{
+footer div ul h4,.social h4{
     font-size: 19px;
     color: rgba(0, 0, 0, 0.39);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 10px;
 }
-.social>h4{
+.social h4{
     height: 20px;
     grid-column: 1/4;
     text-align: center;
@@ -748,270 +425,4 @@ footer>div>ul>h4,.social>h4{
     grid-template-rows: 50px;
     column-gap: 3em;
     row-gap: 0.1em;
-}
-
-
-/*----   Responsive  ----*/
-
-@media (max-width: 1359px){
-    
-    nav{
-        z-index: 13;
-    }
-    .UlNavPrincipal{
-        margin-right: 0;
-        transition: 0.6s;
-    }
-    ul.losProductos,
-    ul.lasMarcas,
-    ul.laAyuda{
-        top: 52px;
-        width: 100%;
-        height: auto;
-        left: 0;
-        flex-wrap: wrap;
-        width: 100%;
-        list-style: none;
-        text-decoration: none;
-        z-index: 13;
-        align-items: center;
-        justify-content: center;
-        padding: 0.5em 0 0.5em 0;
-        display: none;
-    }
-    
-    ul.losProductos li,
-    ul.lasMarcas li,
-    ul.laAyuda li{
-        background: rgba(169, 169, 169, 0.315);
-        height: 20px;
-        margin: 2.5px;
-        display: flex;
-        align-items: center;
-        box-shadow: 0 0 0.9px rgba(0, 0, 0, 0.575);
-    }
-    
-    ul.losProductos.show,
-    ul.lasMarcas.show,
-    ul.laAyuda.show{
-        display: flex;
-        transform: none;
-    }        
-
-}
-
-@media (max-width:750px){
-    div.MasFrecuentes{
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 50% 50%;
-        margin-bottom: 3.5em;
-    }
-    .departamentos>div>h3{
-        font-size: 10px;
-        opacity: 0.4;
-    }
-
-    footer{
-        padding: 40px 9%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        letter-spacing: 0.4px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }
-    footer div{
-        width: 100%;
-        margin-bottom: 2em;
-    }
-    footer>div>ul{
-        width: 33.3%;
-        list-style: none;
-        line-height: 25px;
-        font-size: 7px;
-        margin-left: 2em;
-        justify-content: space-between;
-    }
-    footer>ul>h4,.social>h4{
-        font-size: 19px;
-        color: rgba(0, 0, 0, 0.39);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin-bottom: 10px;
-    }
-    .social>h4{
-        height: 20px;
-        grid-column: 1/4;
-        text-align: center;
-    
-    }
-    .social{
-        grid-template-columns: repeat(3,1fr);
-        grid-template-rows: 30% 35% 35%;
-        height: auto;
-        width: 100%;
-        justify-items: center;
-        row-gap: 0.4em;
-    }
-    .social img{
-        width: 35px;   
-}
-
-@media (max-width: 425px){
-    
-    .BannerPrincipal{
-        height: 300px;
-    }
-    .verzul{
-        height: 300px;
-    }
-    .busqueda{
-        width: 250px;
-    }
-    nav{
-        width: 100%;
-        color: rgba(255, 255, 255, 0.397);
-        background-color: rgba(0, 0, 0, 0.349);
-        opacity: 1;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-    }    
-    .menu{
-        display: block;
-    }
-    .UlNavPrincipal{
-        position: fixed;
-        top: 52px;
-        width: 45%;
-        left: -45%;
-        height: 100%;
-        color: white;
-        font-size: 16px;
-        background: rgba(169, 169, 169, 0.644);
-        transform:translatex(0);
-        transition: transform 0.5s;
-        list-style: none;
-        text-decoration: none;
-        z-index: 13;
-        opacity: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        overflow-y: scroll;
-
-    }
-    .UlNavPrincipal>li>p,.UlNavPrincipal>li>a{
-        padding: 20px 40px;
-        display: flex;
-        flex-direction: column;
-        
-    }   
-    .UlNavPrincipal>li,.UlNavPrincipal>a{
-        padding: 0;}
-
-    .UlNavPrincipal.show{
-        transform:translatex(100%);
-    }
-    
-    
-    .lasMarcas,
-    .losProductos,
-    .laAyuda{display: none;}
-
-    ul.losProductos.show,
-    ul.lasMarcas.show,
-    ul.laAyuda.show{
-        background: none;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        top: 0;
-        left: 0;
-        text-align: left;
-        
-    }
-    ul.losProductos.show li,
-    ul.lasMarcas.show li,
-    ul.laAyuda.show li{
-        padding: 15px 8px;
-        margin: 0;
-        width: 100%;
-        font-size: 12px;
-    }
-    
-    ul.losProductos.show li:hover,
-    ul.lasMarcas.show li:hover,
-    ul.laAyuda.show li:hover,
-    .UlNavPrincipal>li>a:hover,
-    .UlNavPrincipal>li>p:hover,
-    .point p{
-        background:rgba(255, 255, 255, 0.363);
-        transition: 0.8s;
-    }
-
-    .container{
-        width: 95%;
-    }
-
-    div.MasFrecuentes{
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 50% 50%;
-        margin-bottom: 3.5em;
-    }
-
-
-    footer{
-        padding: 40px 9%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        letter-spacing: 0.4px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }
-    footer div{
-        width: 100%;
-        margin-bottom: 2em;
-    }
-    footer>div>ul{
-        width: 33.3%;
-        list-style: none;
-        line-height: 25px;
-        font-size: 7px;
-        margin-left: 2em;
-        justify-content: space-between;
-    }
-    footer>ul>h4,.social>h4{
-        font-size: 19px;
-        color: rgba(0, 0, 0, 0.39);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin-bottom: 10px;
-    }
-    .social>h4{
-        height: 20px;
-        grid-column: 1/4;
-        text-align: center;
-    
-    }
-    .social{
-        grid-template-columns: repeat(3,1fr);
-        grid-template-rows: 30% 35% 35%;
-        height: auto;
-        width: 100%;
-        justify-items: center;
-        row-gap: 0.4em;
-    }
-    .social img{
-        width: 35px;
-    }
-
-}
-
-@media (max-width: 360px){
-    div.departamentos{
-        font-size: 8px;
-        gap: 0;
-    }
 }
