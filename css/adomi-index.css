@@ -10,7 +10,6 @@ body{
     margin: 0;
     background: url(hideout.svg);
     background-size: 13%;
-    
 
 }
 a{
@@ -40,6 +39,7 @@ nav{
     letter-spacing: 1.2px;
     font-weight: 800;
     cursor: pointer;
+    z-index: 1;
     
 }
 .opciones{
@@ -53,6 +53,29 @@ nav{
 .opciones a{
     padding: 5px;
     margin: 0 6px;
+}
+nav .depmenu{
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    top: 10px;
+    left: 110px;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.25s;
+}
+nav .depmenu:hover{
+    opacity: 0.5;
+    transform: scale(.9);
+    transition: 0.25s;
+}
+nav .depmenu.show{
+    opacity: 0.5;
+    transform: scale(.9);
+    transition: 0.25s;
+}
+.movmenu{
+    visibility: hidden;
 }
 
 /*  Header-Banner Principal  */
@@ -68,7 +91,7 @@ nav{
 .cobertura{
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 64vh;
     background: rgba(20, 170, 163, 0.377);
     display: flex;
     flex-direction: column;
@@ -108,10 +131,10 @@ nav{
 
 /*  Menu por departamentos  */
 .envoltura{
-    top: 0;
+    top: 50px;
     left: -100%;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 50px);
     background-color: rgba(0, 0, 0, 0.664);    
     display: flex;
     justify-content: center;
@@ -225,8 +248,8 @@ nav{
     width: 80%;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 1.5em;
-    padding: 0 20px;
+    gap: 1.4em;
+    padding: 0 19px;
     margin-bottom: 150px;
     
 }
@@ -281,33 +304,45 @@ nav{
 }
 .Frecuentes section ul li .viñeta{
     width: 35%;
+    transition: transform 0.5s;
+    transform-origin: right;
+    transform: scaleX(1);   
     opacity: 0.95;
 }
-
+.Frecuentes section ul li .viñeta:hover{
+    transition: transform 0.5s;
+    transform-origin: right;
+    transform: scaleX(2.864);
+}
 .Frecuentes section.cables ul li .viñeta{
     background: rgb(57, 140, 207);
-    border-right: 5.3px solid rgb(47, 117, 173);
+    border-right: 0.3px solid rgb(47, 117, 173);
 }
 .Frecuentes section.rams ul li .viñeta{
     background: rgb(139, 97, 253);
-    border-right: 5.3px solid rgb(115, 65, 252);
+    border-right: .3px solid rgb(115, 65, 252);
 }
 .Frecuentes section.discos ul li .viñeta{
     background: lightseagreen;
-    border-right: 5.3px solid rgb(26, 139, 134);
+    border-right: .3px solid rgb(26, 139, 134);
 }
 .Frecuentes section.perifericos ul li .viñeta{
     background: rgb(32, 83, 178);
-    border-right: 5.3px solid rgb(28, 73, 156);
+    border-right: .3px solid rgb(28, 73, 156);
 }
 
 .Frecuentes section ul li .foto{
     background: url(../img/disco.png) no-repeat center center/cover;
-    border: none;
     opacity: 0.6;
     
 }
-.Frecuentes section ul li:hover div{
+.Frecuentes section:nth-child(2n + 2) ul li:nth-child(2n + 1) .foto{
+    background: url(../img/proce.png) no-repeat center center/cover;
+}
+.Frecuentes section:nth-child(2n + 1) ul li:nth-child(2n + 2) .foto{
+    background: url(../img/proce.png) no-repeat center center/cover;
+}
+.Frecuentes section ul li:hover .foto{
     transition: 0.5s;
     opacity: 1;
 }
@@ -358,37 +393,171 @@ section .content{
     width: 60%;
    
 }
+section .content h2{
+    color: rgba(231, 229, 229, 0.6);
+    margin: auto;
+    margin-top: 20%;
+    width: 70%;
+    height: 200px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 80px;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section:nth-child(1) .content h2{
+    color: rgba(161, 206, 243, 0.45);
+}
 section .content .cuadros{
     margin: auto;
-    margin-top: 30%;
+    margin-top: 3%;
     margin-bottom: 20%;
-    width: 60%;
+    width: 52%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.8em;
+    gap: 1em;
 }
-section .content .cuadros div.big{
+section .content .cuadros .big.box{
     grid-column: 1/3;
     height: 300px;
 }
-section .content div{
+section .content .cuadros .box{
     width: 100%;
     height: 200px;
     background: rgba(231, 229, 229, 0.568);
+    position: relative;
+    transition: 0.8s;
+    overflow: hidden;
+    opacity: 0.9;
 }
-section.banner:nth-child(1) .content div{
+section.banner:nth-child(1) .content .cuadros .box{
     background: rgba(141, 197, 243, 0.993);
 
 }
+section .content .cuadros .box .imgbox{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background: rgba(20, 170, 163, 0.377);
+}
+section:nth-child(1) .content .cuadros .big.box .imgbox{
+    background: url(../img/chip.jpg)no-repeat center center/cover;
+}
+section:nth-child(2) .content .cuadros .big.box .imgbox{
+    background: url(../img/portable.jpg)no-repeat center center/cover;
+}
+section:nth-child(3) .content .cuadros .big.box .imgbox{
+    background: url(../img/puertos.jpg)no-repeat center center/cover;
+}
+section:nth-child(1) .content .cuadros .box.end .imgbox,section:nth-child(2) .content .cuadros .box.end .imgbox,section:nth-child(3) .content .cuadros .box.end .imgbox{
+    background: transparent;
+}
 
-
+section .content .cuadros .box:nth-child(2n + 2) .imgbox{
+    background: none;
+}
+section .content .cuadros .box:nth-child(2n + 1) .imgbox{
+    background: none;
+}
+section .content .cuadros .box .contentbox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px;
+    text-align: left;
+    opacity: 1;
+    font-family: sans-serif;
+}
+section .content .cuadros .box:hover{
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    transition: 0.5s linear;
+    opacity: 1;
+}
+section .content .cuadros .box:hover .imgbox{
+    filter: saturate(0.0) contrast(1.1);
+    transition: .6s linear;
+    
+}
+section .content .cuadros .box .contentbox h3{
+    color: white;
+    transition: 0.5s;
+    font-size: 18px;
+    margin-bottom: 12px;
+    transform: translateY(200px);
+    transition: 0.6s;
+    
+}
+section .content .cuadros .box:hover .contentbox h3{
+    transform: translateY(0);
+    transition: 0.55s;
+    transition-delay: 0.4s;
+}
+section .content .cuadros .box .contentbox p{
+    color: #fff;
+    transform: translateY(200px);
+    font-size: xx-small;
+}
+section .content .cuadros .box:hover .contentbox p{
+    transform: translateY(0);
+    transition: 0.55s;
+    transition-delay: 0.6s;
+}
+section .content .cuadros .box .contentbox .price{
+    background: rgba(20, 170, 163, 0.377);
+    color: white;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    transform: translateX(60px) translateY(-60px);
+    transition: .5s;
+    opacity: 0;
+}
+section .content .cuadros .big.box .contentbox .price{
+    width: 100px;
+    height: 100px;
+    font-size: 1.3em;
+}
+section .content .cuadros .box:hover .contentbox .price{
+    transform: translateX(0) translateY(0) scale(1.2);
+    opacity: 1;
+    transition: 0.5s;
+    transition-delay: 1.1s;
+}
+section .content .cuadros .box.end .contentbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    color: #fff;
+}
+section:nth-child(1) .content .cuadros .box.end .contentbox{
+    color: rgb(95, 171, 233);
+}
+section .content .cuadros .box.end:hover{
+    box-shadow: none;
+}
+section .content .cuadros .box.end:hover .contentbox{
+    text-shadow: none;
+    transition: 0.6s;
+}
 /*  Footer  */
 
 footer{
     width: 100%;
     height: auto;
     background: rgba(128, 128, 128, 0.952);
-    margin-top: 6em;
     display: flex;
     justify-content: space-between;
     padding: 40px 12%;

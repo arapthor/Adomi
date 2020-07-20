@@ -9,7 +9,7 @@ document.querySelector('.Productos').addEventListener('click', () =>{document.qu
 document.querySelector('.Ayuda').addEventListener('click', () =>{document.querySelector('.laAyuda').classList.toggle('show'); document.querySelector('.Ayuda').classList.toggle('point');});*/
 
 /*  Despliegue de Categorias-Departamentos  */
-document.querySelector('.comoamazon').addEventListener('click', () =>{ document.querySelector('.envoltura').classList.toggle('noshow');});
+document.querySelector('.depmenu').addEventListener('click', () =>{ document.querySelector('.envoltura').classList.toggle('noshow'); document.querySelector('.depmenu').classList.toggle('show');});
 
 
 /*  Menu de mobile */
