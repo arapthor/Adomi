@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 body{
@@ -10,11 +11,10 @@ body{
     margin: 0;
     background: url(hideout.svg);
     background-size: 13%;
-
+    overflow-x: hidden;
 }
 a{
     text-decoration: none;
-    color: white;
 }
 
 /*  Barra-Navegador*/
@@ -24,16 +24,17 @@ nav{
     top: 0;
     left: 0;
     height: 50px;
+    color: #fff;
     padding: 0 1%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: rgba(17, 17, 17, 0.493);
+    transition: 0.8s;
     z-index: 20;
     mix-blend-mode: multiply;
 }
 .logo{
-    color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 23.5px;
     letter-spacing: 1.2px;
@@ -43,41 +44,121 @@ nav{
     
 }
 .opciones{
-    font-size: 17;
+    font-size: 18;
     font-weight: 500;
     position: absolute;
     display: flex;
     width: 100%;
+    height: 100%;
     justify-content: center;
 }
-.opciones a{
-    padding: 5px;
-    margin: 0 6px;
+.opciones li{
+    position: relative;
+    padding: 5px 12px;
+    height: 100%;
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-nav .depmenu{
+.opciones li a,footer a{
+    color: white;
+}
+.opciones li.sub.show::before{
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 0 solid transparent;
+    border-bottom: 14px solid #1515157a;
+}
+.opciones li:hover,.opciones li.show{
+    background: rgba(255, 255, 255, 0.6);
+    transition: 0.3s;
+}
+nav ul.opciones li ul.desplegable{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 180px;
+    background: rgba(17, 17, 17, 0.8);
+    border-radius: 0 0 5px 5px;
+    display: none;
+    padding-top: 10px;
+    transition: 0.8s;
+}
+nav ul.opciones li.show ul.desplegable{
+    display: block;
+}
+nav ul.opciones li.show ul.desplegable li{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 12px 0;
+    border-bottom: none;
+}
+nav .depboton{
     position: absolute;
     color: white;
     font-size: 30px;
-    top: 10px;
-    left: 110px;
+    top: 0;
+    left: 125px;
     cursor: pointer;
     z-index: 1;
     transition: 0.25s;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-nav .depmenu:hover{
-    opacity: 0.5;
+nav .depboton:hover,nav .depboton.show{
+    transition: 0.25s;
+    background: rgba(255, 255, 255, 0.6);
+}
+nav .depboton:hover i,nav .depboton.show i{
+    opacity: 0.6;
     transform: scale(.9);
     transition: 0.25s;
 }
-nav .depmenu.show{
-    opacity: 0.5;
-    transform: scale(.9);
-    transition: 0.25s;
-}
-.movmenu{
+.mobmenu{
+    width: 30px;
+    height: 20px;
+    margin-right: 20px;
     visibility: hidden;
 }
-
+.mobmenu::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 5px;
+    background: white;
+}
+.mobmenu::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: white;
+}
+.mobmenu.active::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+    transition: 0.5s;
+}
+.mobmenu.active::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+    transition: 0.5s;
+}
 /*  Header-Banner Principal  */
 
 .mainbanner{
@@ -86,13 +167,23 @@ nav .depmenu.show{
     left: 0;
     width: 100%;
     height: 64vh;
-    background: url(../img/site.jpg)no-repeat center center/cover;
+}
+.mainbanner img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0) contrast(0.6);
+
 }
 .cobertura{
     position: relative;
     width: 100%;
     height: 64vh;
-    background: rgba(20, 170, 163, 0.377);
+    background: linear-gradient(180deg,rgba(3, 243, 231, 1),#292b2a);
+    mix-blend-mode: multiply;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,7 +197,7 @@ nav .depmenu.show{
     justify-content: space-between;
     align-items: center;
     padding: 0 5px;
-    background: rgba(221, 220, 220, 0.205);
+    background: rgba(238, 236, 236, 0.308);
 
 }
 .barradebusqueda i{
@@ -135,7 +226,7 @@ nav .depmenu.show{
     left: -100%;
     width: 100%;
     height: calc(100% - 50px);
-    background-color: rgba(0, 0, 0, 0.664);    
+    background-color: rgba(0, 0, 0, 0.7);    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,7 +235,7 @@ nav .depmenu.show{
     transform: translateX(0);
     transition: transform 0.8s ease-in-out;
 }
-.envoltura.noshow{
+.envoltura.show{
     transform: translateX(100%);
 }
 .departamentos{
@@ -164,13 +255,13 @@ nav .depmenu.show{
     transition: 0.8s;
 }
 .departamentos>div:hover{
-    opacity: 0.5;
+    opacity: 0.45;
     transition: 0.4s;
 }
 .departamentos>div>h3{
     width: 100%;
     text-align: center;
-    opacity: 0.2;
+    opacity: 0.3;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 22px;
     cursor: default;
@@ -241,116 +332,117 @@ nav .depmenu.show{
     grid-row: 5/6;
 }
 
-/*  Frecuentes  */
-
-.Frecuentes{
-    margin: auto;
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 1.4em;
-    padding: 0 19px;
-    margin-bottom: 150px;
-    
-}
-.Frecuentes section{
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
+/*  Extra  */
+.bannerextra{
+    width: 300vw;
+    height: 36vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 5px 5px 30px rgba(17, 17, 17, 0.678);
+    overflow-x: hidden;
+    background: linear-gradient(270deg,rgba(220, 220, 220, 0.87),white);
+    background-size: 33%;
 }
-.Frecuentes section article{
-    width: 100%;
-    height: 200px;
+.bannerextra .base{
+    width: 100vw;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    animation: pase 10s linear infinite;
+    animation-delay: 2s;
 }
-.Frecuentes section.cables article{
+.bannerextra .base h2{
+    font-size: 8vw;
+    position: relative;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1em;
+    background-size: 50%;
+    color: rgba(200, 204, 202, 0.644);
+}
+.bannerextra .base:nth-child(1) h2 span{color: rgba(57, 140, 207, 0.644);}
+.bannerextra .base:nth-child(2) h2 span{color: rgba(32, 178, 171, 0.644);}
+.bannerextra .base:nth-child(3) h2 span{color: rgba(139, 97, 253, 0.63);}
+@keyframes pase{
+    0%{transform: translateX(50vw);}
+    1%{transform: translateX(0vw);}
+    33%{transform: translateX(0vw);}
+    35%{transform: translateX(-100vw);}
+    66%{transform: translateX(-100vw);}
+    68%{transform: translateX(-200vw);}
+    100%{transform: translateX(-200vw);}
+}
+/*  Frecuentes  */
+
+.coverfrecuentes{
+    width: 100%;
+    height: 105vh;
+    display: flex;
+    overflow: hidden;
+    background: linear-gradient(270deg,rgba(220, 220, 220, 0.87),white);
+}
+.coverfrecuentes .gsecciones#mensaje{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    font-size: 80px;
+    width: 50%;
+    padding: 100px 200px;
+    text-align: left;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+.coverfrecuentes .gsecciones#mensaje span{
+    color:  rgb(57, 140, 207);
+    transform: translate(100px,-120px);
+    display: none;
+    font-size: 1.2em;
+    text-align: left;
+    
+}
+.coverfrecuentes .gsecciones#mensaje span:nth-child(1){display: initial;}
+.coverfrecuentes .gsecciones#mensaje span:nth-child(2),
+.coverfrecuentes .gsecciones#mensaje span:nth-child(5){color: rgb(139, 97, 253);}
+.coverfrecuentes .gsecciones#mensaje span:nth-child(3){color: lightseagreen;}
+.coverfrecuentes .gsecciones#mensaje span:nth-child(4){color: rgb(32, 83, 178);}
+.coverfrecuentes .gsecciones.cuadro{
+    width: 50%;
+    grid-row: 1/3;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 0.5em;
+    padding: 50px;
+    padding-right: 100px;
+}
+.coverfrecuentes .gsecciones.cuadro article{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.coverfrecuentes .gsecciones.cuadro article.cables,.coverfrecuentes .gsecciones.cuadro article.caja{
     background: rgb(57, 140, 207);
 }
-.Frecuentes section.rams article{
+.coverfrecuentes .gsecciones.cuadro article.ram,.coverfrecuentes .gsecciones.cuadro article.software{
     background: rgb(139, 97, 253);
 }
-.Frecuentes section.discos article{
+.coverfrecuentes .gsecciones.cuadro article.discos{
     background: lightseagreen;
 }
-.Frecuentes section.perifericos article{
+.coverfrecuentes .gsecciones.cuadro article.perifericos{
     background: rgb(32, 83, 178);
 }
-.Frecuentes section article img{
+.coverfrecuentes .gsecciones.cuadro article:hover img{
+    opacity: 0.5;
+    transition: 0.35s;
+}
+.coverfrecuentes .gsecciones.cuadro article img{
     width: 55%;
     height: 55%;
     opacity: 0.3;
 }
-.Frecuentes section ul{
-    list-style: none;
-    width: 100%;
-    margin: 25px 0;
 
-}
-.Frecuentes section ul li{
-    width: 100%;
-    height: 150px;
-    margin: 8px 0;
-    display: flex;
-}
-.Frecuentes section ul li .foto{
-    width: 65%;
-}
-.Frecuentes section ul li .viñeta{
-    width: 35%;
-    transition: transform 0.5s;
-    transform-origin: right;
-    transform: scaleX(1);   
-    opacity: 0.95;
-}
-.Frecuentes section ul li .viñeta:hover{
-    transition: transform 0.5s;
-    transform-origin: right;
-    transform: scaleX(2.864);
-}
-.Frecuentes section.cables ul li .viñeta{
-    background: rgb(57, 140, 207);
-    border-right: 0.3px solid rgb(47, 117, 173);
-}
-.Frecuentes section.rams ul li .viñeta{
-    background: rgb(139, 97, 253);
-    border-right: .3px solid rgb(115, 65, 252);
-}
-.Frecuentes section.discos ul li .viñeta{
-    background: lightseagreen;
-    border-right: .3px solid rgb(26, 139, 134);
-}
-.Frecuentes section.perifericos ul li .viñeta{
-    background: rgb(32, 83, 178);
-    border-right: .3px solid rgb(28, 73, 156);
-}
-
-.Frecuentes section ul li .foto{
-    background: url(../img/disco.png) no-repeat center center/cover;
-    opacity: 0.6;
-    
-}
-.Frecuentes section:nth-child(2n + 2) ul li:nth-child(2n + 1) .foto{
-    background: url(../img/proce.png) no-repeat center center/cover;
-}
-.Frecuentes section:nth-child(2n + 1) ul li:nth-child(2n + 2) .foto{
-    background: url(../img/proce.png) no-repeat center center/cover;
-}
-.Frecuentes section ul li:hover .foto{
-    transition: 0.5s;
-    opacity: 1;
-}
-
-.Frecuentes section ul li .foto img{
-    width: 100%;
-    height: 100%;
-}
 
 /*  Banners  */
 .banners{
@@ -441,6 +533,7 @@ section .content .cuadros .box .imgbox{
     width: 100%;
     top: 0;
     background: rgba(20, 170, 163, 0.377);
+    transition: 0.4s;
 }
 section:nth-child(1) .content .cuadros .big.box .imgbox{
     background: url(../img/chip.jpg)no-repeat center center/cover;
@@ -475,13 +568,14 @@ section .content .cuadros .box .contentbox{
     font-family: sans-serif;
 }
 section .content .cuadros .box:hover{
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     transition: 0.5s linear;
     opacity: 1;
 }
 section .content .cuadros .box:hover .imgbox{
     filter: saturate(0.0) contrast(1.1);
-    transition: .6s linear;
+    transform: scale(1.08) ;
+    transition: .4s linear;
     
 }
 section .content .cuadros .box .contentbox h3{
@@ -491,7 +585,6 @@ section .content .cuadros .box .contentbox h3{
     margin-bottom: 12px;
     transform: translateY(200px);
     transition: 0.6s;
-    
 }
 section .content .cuadros .box:hover .contentbox h3{
     transform: translateY(0);
@@ -560,7 +653,7 @@ footer{
     background: rgba(128, 128, 128, 0.952);
     display: flex;
     justify-content: space-between;
-    padding: 40px 12%;
+    padding: 50px 12%;
     letter-spacing: 0.4px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -573,7 +666,6 @@ footer div ul{
     list-style: none;
     line-height: 25px;
     font-size: 7px;
-    
 }
 footer div ul h4,.social h4{
     font-size: 19px;

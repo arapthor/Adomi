@@ -10,28 +10,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
     <!--Font awesome-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
 </head>
 <body>
 <!--<i class="fa fa-plus" aria-hidden="true"></i>
 <i class="fa fa-bars" aria-hidden="true"></i>
+<i class="fa fa-align-justify" aria-hidden="true"></i>
+<i class="fa fa-align-left" aria-hidden="true"></i>
+
 <i class="fa fa-angle-left" aria-hidden="true"></i>
 -->
 <!--   Cabecera y navegador-->    
     <header>
         <nav>
             <div class="logo">Adomi</div>
-            <i class="fa fa-th-large depmenu" aria-hidden="true"></i>
-            <i class="fa fa-bars movmenu" aria-hidden="true"></i>
-            <div class="opciones">
-                <a href="">Products</a>
-                <a href="">Brands</a>
-                <a href="">Delivery</a>
-                <a href="">Contact</a>
-                <a href="">Help</a>
+            <div class="depboton"><i class="fa fa-align-left" aria-hidden="true"></i>
             </div>
+            <ul class="opciones">
+                <li class="show">Home</li>
+                <li class="sub">
+                    <p>Products</p>
+                    <ul class="desplegable" >
+                        <li><a href="">Cables</a></li>
+                        <li><a href="">Cases</a></li>
+                        <li><a href="">Disks</a></li>
+                        <li><a href="">Desktop</a></li>
+                        <li><a href="">Software</a></li>
+                        <li><a href=""><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                    </ul>
+                </li>
+                <li class="sub">
+                    <p>Brands</p>
+                    <ul class="desplegable">
+                        <li><a href="">link 1</a></li>
+                        <li><a href="">link 2</a></li>
+                        <li><a href="">link 3</a></li>
+                        <li><a href="">link 4</a></li>
+                        <li><a href="">link 5</a></li>
+                        <li><a href=""><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Delivery</a>
+                </li>
+                <li>
+                    <a>Contact</a>
+                </li>
+                <li class="sub">
+                    <p>Help</p>
+                    <ul class="desplegable">
+                        <li><a href="">Support</a></li>
+                        <li><a href="">Frecuente Questions</a></li>
+                        <li><a href="">Suggestions</a></li>
+                        <li><a href=""><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="mobmenu"></div>
         </nav>
 
+<!--- Banner Inicial-->
         <div class="mainbanner">
+            <img src="img/site.jpg" alt="site">
             <div class="cobertura">
                 <div class="barradebusqueda">
                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -97,41 +137,41 @@
     </div>
 <!--  (final) Menu desplegable por departamentos -->
 
+<!--Extra-->
+
+    <div class="bannerextra">
+        <div class="base">
+            <h2><span>f</span>ind</h2>
+        </div>
+        <div class="base">
+            <h2>Rec<span>i</span>eve</h2>
+        </div>
+        <div class="base">
+            <h2>Assembl<span>e</span></h2>
+        </div>
+    </div>
+
+<!--(final) Extra-->
+
 <!--  Frecuentes -->
-    <div class="Frecuentes">
-        <section class="gsecciones cables">
-            <article><img src="iconos/025-cable.svg" alt="Cables"></article>
-            <ul>
-                <li><div class="foto"></div><div class="viñeta"></div></li>
-                <li><div class="foto"></div><div class="viñeta"></div></li>
-                <li><div class="foto"></div><div class="viñeta"></div></li>
-            </ul>
+    <div class="coverfrecuentes" >
+        <h2 id="mensaje" class="gsecciones">You are here looking for 
+            <span> Cables</span>
+            <span> Rams</span>
+            <span> Disks</span>
+            <span> Periferics</span>
+            <span> Software</span>
+            <span> Cases</span>    
+        </h2>
+        <section class="gsecciones cuadro">
+            <article class="cables"><img src="iconos/025-cable.svg" alt="Cables"></article>
+            <article class="ram"><img src="iconos/018-chip.svg" alt="ram"></article>
+            <article class="discos"><img src="iconos/013-diskette.svg" alt="discos"></article>
+            <article class="perifericos"><img src="iconos/016-clicker.svg" alt="perifericos"></article>
+            <article class="software"><img src="iconos/009-bluray.svg" alt="perifericos"></article>
+            <article class="caja"><img src="iconos/004-case.svg" alt="perifericos"></article>
         </section>
-        <section class="gsecciones rams">
-            <article><img src="iconos/018-chip.svg" alt="ram"></article>
-            <ul>
-                <li><div class="foto"></div><div class="viñeta"></div></li>
-                <li><div class="foto"></div><div class="viñeta"></div></li>
-                <li><div class="foto"></div><div class="viñeta"></div></li>
-            </ul>
-        </section>
-        <section class="gsecciones discos">
-            <article><img src="iconos/009-bluray.svg" alt="discos"></article>
-            <ul>
-                <li><div class="foto"></div><div class="viñeta"></div></li>
-                <li><div class="foto"></div><div class="viñeta"></div></li>
-                <li><div class="foto"></div><div class="viñeta"></div></li>
-            </ul>
-        </section>
-        <section class="gsecciones perifericos ">
-            <article><img src="iconos/016-clicker.svg" alt="perifericos"></article>
-            <ul>
-                <li><div class="foto"></div><div class="viñeta"></div></li>
-                <li><div class="foto"></div><div class="viñeta"></div></li>
-                <li><div class="foto"></div><div class="viñeta"></div></li>
-            </ul>
-        </section>
-    
+        
     </div>
 <!--  (final) Frecuentes -->
 
@@ -370,7 +410,6 @@
     </section>
 </div>
 <!--  (final) Banners  -->
-
 <!--  Footer -->
     <footer>
         <div>
@@ -418,6 +457,29 @@
 
 <!-- Script-->
 <script src="js/adomi-index.js" type="text/javascript" async></script> 
-
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+    $('ul.opciones li').click(function(){
+        $(this).siblings().removeClass('show');
+        $(this).toggleClass('show');
+    })
+    </script>
+    <script type="text/javascript">
+        var $win = $(window);
+        var $navegador = $('nav')
+        var $listasc = $('.desplegable')
+        $win.on('scroll', function () {
+            var $altura = $win.scrollTop()
+            console.log($altura);
+            if ($altura < 400) {
+                $navegador.css('background', 'rgba(17, 17, 17, 0.8)');   
+                $listasc.css('background', 'rgba(17, 17, 17, 0.8)');   
+            }
+            else{
+                $navegador.css('background', 'rgba(17, 17, 17, 0.493)');
+                $listasc.css('background', 'rgba(17, 17, 17, 0.493)');
+            }
+        })
+    </script>
 </body>
 </html>

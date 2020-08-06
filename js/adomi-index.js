@@ -1,30 +1,18 @@
-/*  Desplazamiento del Form *//*
-document.querySelector('.pri').addEventListener('click', () =>{document.querySelector('.despla').classList.toggle('zable');});*/
 
-/*  Despliegue del nav  *//*
-document.querySelector('.Marcas').addEventListener('click', () =>{document.querySelector('.lasMarcas').classList.toggle('show'); document.querySelector('.Marcas').classList.toggle('point');});
+document.querySelector('.depboton').addEventListener('click', () =>{ document.querySelector('.envoltura').classList.toggle('show'); document.querySelector('.depboton').classList.toggle('show');});
 
-document.querySelector('.Productos').addEventListener('click', () =>{document.querySelector('.losProductos').classList.toggle('show'); document.querySelector('.Productos').classList.toggle('point');});
+/*Rotacion de palabras*/
+var texto = document.getElementById('mensaje');
+var palabra = texto.getElementsByTagName('span');
+var i = 0;
 
-document.querySelector('.Ayuda').addEventListener('click', () =>{document.querySelector('.laAyuda').classList.toggle('show'); document.querySelector('.Ayuda').classList.toggle('point');});*/
-
-/*  Despliegue de Categorias-Departamentos  */
-document.querySelector('.depmenu').addEventListener('click', () =>{ document.querySelector('.envoltura').classList.toggle('noshow'); document.querySelector('.depmenu').classList.toggle('show');});
+function rotador(){
+    palabra[i].style.display = 'none';
+    i = (i + 1) % palabra.length;
+    palabra[i].style.display = 'initial';
+}
+setInterval(rotador, 1500);
 
 
 /*  Menu de mobile */
-
-
-var enlace = document.querySelector('.comoamazon');
-var infor = enlace.textContent;
-
-
-function desvio(){
-    if(enlace.textContent === 'Products'){
-        console.log('esta vacio');
-    }
-    else{console.log('esta vacio pero no como piensas')}
-}
-
-enlace.addEventListener('click', desvio);
-
+document.querySelector('.mobmenu').addEventListener('click', () =>{document.querySelector('.mobmenu').classList.toggle('active');})
