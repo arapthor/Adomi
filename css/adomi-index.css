@@ -12,6 +12,7 @@ body{
     background: url(hideout.svg);
     background-size: 13%;
     overflow-x: hidden;
+    transition: 0.5s;
 }
 a{
     text-decoration: none;
@@ -147,13 +148,13 @@ nav .depboton:hover i,nav .depboton.show i{
     height: 5px;
     background: white;
 }
-.mobmenu.active::before {
+body.active .mobmenu::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotate(45deg);
     transition: 0.5s;
 }
-.mobmenu.active::after {
+body.active .mobmenu::after {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotate(-45deg);
@@ -191,13 +192,14 @@ nav .depboton:hover i,nav .depboton.show i{
 }
 .barradebusqueda{
     width: 38%;
+    max-width: 38%;
     height: 35px;
     margin-top: 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5px;
-    background: rgba(238, 236, 236, 0.308);
+    background: rgba(253, 252, 252, 0.558);
 
 }
 .barradebusqueda i{
@@ -334,43 +336,47 @@ nav .depboton:hover i,nav .depboton.show i{
 
 /*  Extra  */
 .bannerextra{
-    width: 300vw;
+    position: relative;
+    width: 100vw;
     height: 36vh;
     display: flex;
     overflow-x: hidden;
     background: linear-gradient(270deg,rgba(220, 220, 220, 0.87),white);
-    background-size: 33%;
+    background-size: 100%;
 }
 .bannerextra .base{
-    width: 100vw;
+    position: absolute;
+    left: 70vw;
+    width: 300vw;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     animation: pase 10s linear infinite;
-    animation-delay: 2s;
+    animation-delay: 1s;
 }
 .bannerextra .base h2{
     font-size: 8vw;
+    width: 100vw;
+    text-align: center;
     position: relative;
     font-family: sans-serif;
     text-transform: uppercase;
     font-weight: 900;
     line-height: 1em;
-    background-size: 50%;
     color: rgba(200, 204, 202, 0.644);
 }
 .bannerextra .base:nth-child(1) h2 span{color: rgba(57, 140, 207, 0.644);}
 .bannerextra .base:nth-child(2) h2 span{color: rgba(32, 178, 171, 0.644);}
 .bannerextra .base:nth-child(3) h2 span{color: rgba(139, 97, 253, 0.63);}
 @keyframes pase{
-    0%{transform: translateX(50vw);}
-    1%{transform: translateX(0vw);}
-    33%{transform: translateX(0vw);}
-    35%{transform: translateX(-100vw);}
-    66%{transform: translateX(-100vw);}
-    68%{transform: translateX(-200vw);}
-    100%{transform: translateX(-200vw);}
+    0%{transform: translateX(0vw);}
+    1.2%{transform: translateX(-70vw);}
+    33%{transform: translateX(-70vw);}
+    35%{transform: translateX(-170vw);}
+    66%{transform: translateX(-170vw);}
+    68%{transform: translateX(-270vw);}
+    100%{transform: translateX(-270vw);}
 }
 /*  Frecuentes  */
 
@@ -466,6 +472,7 @@ section.banner:nth-child(2){
 section.banner:nth-child(3){
     background: linear-gradient(90deg,rgb(220, 220, 220),white);
 }
+
 section .imgstock{
     position: sticky;
     width: 40%;
@@ -483,7 +490,6 @@ section.banner:nth-child(3) .imgstock{
 }
 section .content{
     width: 60%;
-   
 }
 section .content h2{
     color: rgba(231, 229, 229, 0.6);
@@ -680,10 +686,186 @@ footer div ul h4,.social h4{
 
 }
 .social{
+    position: relative;
     width: 25%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 50px;
     column-gap: 3em;
     row-gap: 0.1em;
+    margin-bottom: 10px;
+}
+#firma{
+    position: relative;
+    width: 100vw;
+    text-align: center;
+    margin-top: 20px 0 0 0;
+    padding: 0 0;
+    bottom: -15px;
+    color: rgba(0, 0, 0, 0.39);
+    cursor: none;
+}
+
+/*  Responsive  */
+
+@media(max-width: 425px){
+    body.active{
+        transform: translateX(-35vw);
+        transition: 0.5s;
+    }
+    .mobmenu{
+        visibility: visible;
+        margin-right: 0;
+    }
+    nav{
+        width: 100vw;
+        padding: 0 15px;
+    }
+    .opciones{
+        position: fixed;
+        top: 0;
+        left: 100vw;
+        display: flex;
+        flex-direction: column;
+        width: 35vw;
+        height: 100vh;
+        background: lightseagreen;
+        overflow-y: hidden;
+    }
+    .opciones li{
+        position: relative;
+        padding: 0px 0px;
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;  
+    }
+    .opciones li p,.opciones li a{
+        position: relative;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .opciones li.sub.show::before{
+        top: 36px;
+        border-bottom-color: rgb(9, 153, 146);
+    }
+    nav ul.opciones li ul.desplegable{
+        position: relative;
+        height: auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgb(9, 153, 146);
+        border-radius: 0 0 5px 5px;
+        display: none;
+        padding: 10px 0;
+        font-size: 10px;
+        transition: 0.8s;
+    }
+    nav ul.opciones li.show ul.desplegable li{
+        width: 100%;
+        height: 30px;
+        text-align: left;
+        display: flex;
+        padding-left: 25px;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 0px 0;
+        border-bottom: none;
+    }
+    nav .depboton{
+        position: relative;
+        left: -15px;
+    }
+    .barradebusqueda{
+        border-radius: 10px;
+        max-width: 70%;
+    }
+    .bannerextra{
+        width: 100vw;
+    }
+    .bannerextra .base h2{
+        font-size: 15vw;
+    }
+    section.banner, section.banner:nth-child(2){
+        flex-direction: column;
+    }
+    .departamentos div h3{
+        font-size: 14px;
+    }
+    section.banner .imgstock{
+        height: 100vh;
+        width: 100%;
+    }
+    section.banner .content{
+        width: 100%;
+    }
+    section.banner .content h2{
+        text-align: center;
+    }
+    section:nth-child(1) .content h2{
+        color: rgba(255, 255, 255, 0.863);
+    }
+    section.banner:nth-child(3) .content h2{
+        color: gray;
+    }
+    section.banner .content .cuadros{
+        width: 80%;
+    }
+    .coverfrecuentes .gsecciones#mensaje{
+        font-size: 40px;
+        padding: 100px 40px 0px 40px;
+    }
+    .coverfrecuentes .gsecciones#mensaje span{
+        transform: translate(0,0);
+    }
+    .coverfrecuentes .gsecciones.cuadro{
+        padding: 50px 0;
+        left: -15px;
+    }
+    footer{
+        flex-wrap: wrap;
+        padding: 50px 5%;
+    }
+    footer div{
+        width: 100%;
+    }
+    .social{
+        width: 100%;
+        grid-template-columns: repeat(6,30px);
+        padding: 10px;
+        column-gap: 0;
+    }
+    .social h4{
+        grid-column: 1/7;
+    }
+    .social a,.social a img{
+        width: 100%;
+        height: 100%;
+    }
+
+}
+@media(max-width: 410px){
+    .coverfrecuentes .gsecciones#mensaje{
+        padding: 100px 60px 0px 20px;
+    }
+    footer div ul li{
+        width: 80px;
+        margin-bottom: 7px;
+        
+    }   
+}
+@media(max-width: 380px){
+    .coverfrecuentes .gsecciones#mensaje{
+        padding: 100px 70px 0px 10px;
+        font-size: 35px;
+    }
+    .departamentos{
+        gap: 0;
+    }
+    .departamentos div h3{
+        font-size: 12px;
+    }
 }

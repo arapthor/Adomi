@@ -1,7 +1,7 @@
-
+/*  menu por departamentos(boton) */
 document.querySelector('.depboton').addEventListener('click', () =>{ document.querySelector('.envoltura').classList.toggle('show'); document.querySelector('.depboton').classList.toggle('show');});
 
-/*Rotacion de palabras*/
+/*Rotacion de palabras  */
 var texto = document.getElementById('mensaje');
 var palabra = texto.getElementsByTagName('span');
 var i = 0;
@@ -13,6 +13,5 @@ function rotador(){
 }
 setInterval(rotador, 1500);
 
-
-/*  Menu de mobile */
-document.querySelector('.mobmenu').addEventListener('click', () =>{document.querySelector('.mobmenu').classList.toggle('active');})
+/*  Menu de mobile (boton)*/
+document.querySelector('.mobmenu').addEventListener('click', () =>{document.querySelector('body').classList.toggle('active');})
