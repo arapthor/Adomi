@@ -227,7 +227,7 @@ body.active .mobmenu::after {
     top: 50px;
     left: -100%;
     width: 100%;
-    height: calc(100% + 10px);
+    height: 105vh;
     background-color: rgba(0, 0, 0, 0.7);    
     display: flex;
     justify-content: center;
