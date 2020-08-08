@@ -150,7 +150,8 @@
 
 <!--  Frecuentes -->
     <div class="coverfrecuentes" >
-        <h2 id="mensaje" class="gsecciones">You are here looking for 
+        <section id="mensaje" class="gsecciones">
+        <h2>You are here looking for 
             <span> Cables</span>
             <span> Rams</span>
             <span> Disks</span>
@@ -158,6 +159,7 @@
             <span> Software</span>
             <span> Cases</span>    
         </h2>
+        </section>
         <section class="gsecciones cuadro">
             <article class="cables"><img src="iconos/025-cable.svg" alt="Cables"></article>
             <article class="ram"><img src="iconos/018-chip.svg" alt="ram"></article>
@@ -464,9 +466,12 @@
         var $win = $(window);
         var $navegador = $('nav')
         var $listasc = $('.desplegable')
+        var $ancho = $win.width();
+        var $moboton = $('.mobmenu');
+
+        if ($ancho > 375) {
         $win.on('scroll', function () {
             var $altura = $win.scrollTop()
-            console.log($altura);
             if ($altura < 400) {
                 $navegador.css('background', 'rgba(17, 17, 17, 0.8)');   
                 $listasc.css('background', 'rgba(17, 17, 17, 0.8)');   
@@ -476,6 +481,20 @@
                 $listasc.css('background', 'rgba(17, 17, 17, 0.493)');
             }
         })
+        }
+        else{
+        $win.on('scroll', function () {
+            var $altura = $win.scrollTop()
+            if ($altura == 0) {
+                $moboton.css('visibility', 'visible');
+            }
+            else{
+                $moboton.css('visibility', 'hidden');
+            }
+
+        })
+        }
+        
     </script>
 </body>
 </html>

@@ -382,28 +382,30 @@ body.active .mobmenu::after {
 
 .coverfrecuentes{
     width: 100%;
-    height: 105vh;
+    height: 110vh;
     display: flex;
     overflow: hidden;
     background: linear-gradient(270deg,rgba(220, 220, 220, 0.87),white);
 }
 .coverfrecuentes .gsecciones#mensaje{
     display: flex;
-    flex-direction: column;
-    justify-content: left;
-    font-size: 80px;
+    align-items: center;
+    justify-content: center;
     width: 50%;
-    padding: 100px 200px;
+}
+.coverfrecuentes .gsecciones#mensaje h2{
+    font-size: 80px;
+    width: 35%;
     text-align: left;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 .coverfrecuentes .gsecciones#mensaje span{
     color:  rgb(57, 140, 207);
-    transform: translate(100px,-120px);
     display: none;
+    width: 100%;
+    padding: auto;
     font-size: 1.2em;
     text-align: left;
-    
 }
 .coverfrecuentes .gsecciones#mensaje span:nth-child(1){display: initial;}
 .coverfrecuentes .gsecciones#mensaje span:nth-child(2),
@@ -658,6 +660,7 @@ footer{
     height: auto;
     background: rgba(128, 128, 128, 0.952);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 50px 12%;
     letter-spacing: 0.4px;
@@ -712,6 +715,7 @@ footer div ul h4,.social h4{
     body.active{
         transform: translateX(-35vw);
         transition: 0.5s;
+        overflow-y: hidden;
     }
     .mobmenu{
         visibility: visible;
@@ -722,7 +726,6 @@ footer div ul h4,.social h4{
         padding: 0 15px;
     }
     .opciones{
-        position: fixed;
         top: 0;
         left: 100vw;
         display: flex;
@@ -814,9 +817,9 @@ footer div ul h4,.social h4{
     section.banner .content .cuadros{
         width: 80%;
     }
-    .coverfrecuentes .gsecciones#mensaje{
+    .coverfrecuentes .gsecciones#mensaje h2{
         font-size: 40px;
-        padding: 100px 40px 0px 40px;
+        left: -40px;
     }
     .coverfrecuentes .gsecciones#mensaje span{
         transform: translate(0,0);
@@ -848,9 +851,6 @@ footer div ul h4,.social h4{
 
 }
 @media(max-width: 410px){
-    .coverfrecuentes .gsecciones#mensaje{
-        padding: 100px 60px 0px 20px;
-    }
     footer div ul li{
         width: 80px;
         margin-bottom: 7px;
@@ -858,8 +858,7 @@ footer div ul h4,.social h4{
     }   
 }
 @media(max-width: 380px){
-    .coverfrecuentes .gsecciones#mensaje{
-        padding: 100px 70px 0px 10px;
+    .coverfrecuentes .gsecciones#mensaje h2{
         font-size: 35px;
     }
     .departamentos{
