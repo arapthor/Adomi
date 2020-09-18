@@ -724,6 +724,9 @@ footer div ul h4,.social h4{
 @media(max-width: 425px){
     body{
         position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
     }
     body.active{
         transform: translateX(-35vw);
@@ -842,7 +845,7 @@ footer div ul h4,.social h4{
         height: auto;
     }
     .coverfrecuentes .gsecciones.cuadro{
-        width: 90%;
+        width: 70%;
         left: 5%;
         grid-template-columns: repeat(3,1fr);
         top: -70px;
