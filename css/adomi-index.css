@@ -3,19 +3,24 @@
     margin: 0;
     padding: 0;
     position: relative;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body{
+    top: 0;
     height: 100%;
     padding: 0;
     margin: 0;
-    background: url(hideout.svg);
+    background: url(./hideout.svg);
     background-size: 13%;
     overflow-x: hidden;
     transition: 0.5s;
 }
 a{
     text-decoration: none;
+    color: white;
 }
 
 /*  Barra-Navegador*/
@@ -24,37 +29,47 @@ nav{
     width: 100%;
     top: 0;
     left: 0;
-    height: 50px;
+    height: 100px;
     color: #fff;
-    padding: 0 1%;
+    padding: 0 3%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(17, 17, 17, 0.8);
-    transition: 0.8s;
+    background: rgba(37, 37, 37,1);
     z-index: 20;
-    mix-blend-mode: multiply;
+    color: white;
+    backdrop-filter: blur(2px);
+}
+.bargris{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    height: 15px;
+    width: 100%;
+    background: rgba(233, 231, 231,1);
 }
 .logo{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 23.5px;
+    position: relative;
+    left: 20px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 35px;
     letter-spacing: 1.2px;
     font-weight: 800;
     cursor: pointer;
     z-index: 1;
-    
 }
 .opciones{
-    font-size: 18;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 17px;
+    letter-spacing: 1px;
     font-weight: 500;
-    position: absolute;
+    position: relative;
     display: flex;
-    width: 100%;
+    width: 40%;
     height: 100%;
     justify-content: center;
 }
 .opciones li{
-    position: relative;
     padding: 5px 12px;
     height: 100%;
     list-style: none;
@@ -62,20 +77,20 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
+    border: .2px transparent solid;
+    transition: .4s;
 }
-.opciones li a,footer a{
+.opciones li a *{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+footer a{
     color: white;
+
 }
-.opciones li.sub.show::before{
-    content: ' ';
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-left: 18px solid transparent;
-    border-right: 18px solid transparent;
-    border-top: 0 solid transparent;
-    border-bottom: 14px solid #1515157a;
+.opciones li li a{
+    color: #151515;
 }
 .opciones li:hover,.opciones li.show{
     background: rgba(255, 255, 255, 0.6);
@@ -83,31 +98,45 @@ nav{
 }
 nav ul.opciones li ul.desplegable{
     position: absolute;
-    top: 50px;
-    left: 0;
-    width: 180px;
-    background: rgba(17, 17, 17, 0.8);
-    border-radius: 0 0 5px 5px;
+    top: 150px;
+    left: 0px;
+    width: 260px;
     display: none;
     padding-top: 10px;
+    background: white;
+    color: #151515;
+    border-radius: 5px;
+    box-shadow: 0px 3px 20px #292b2a;
     transition: 0.8s;
 }
 nav ul.opciones li.show ul.desplegable{
     display: block;
 }
+nav ul.opciones li.show:nth-child(6) ul.desplegable{
+    left: -210px;
+}
 nav ul.opciones li.show ul.desplegable li{
-    width: 100%;
+    width: calc(100% - 8px);
     display: flex;
-    justify-content: center;
-    margin: 12px 0;
+    flex-direction: column;
+    margin: 12px 4px;
     border-bottom: none;
 }
+nav ul.opciones li ul.desplegable li:hover{
+    background: #1515151c;
+}
+nav ul.opciones li.show ul.desplegable li h5{
+    font-size: 16px;
+}
+nav ul.opciones li.show ul.desplegable li p{
+    font-size: 13px;
+    margin-top: 5px;
+}
 nav .depboton{
-    position: absolute;
+    position: relative;
+    left: -50px;
     color: white;
     font-size: 30px;
-    top: 0;
-    left: 125px;
     cursor: pointer;
     z-index: 1;
     transition: 0.25s;
@@ -126,11 +155,45 @@ nav .depboton:hover i,nav .depboton.show i{
     transform: scale(.9);
     transition: 0.25s;
 }
+
+.barradebusqueda{
+    position: relative;
+    width: 32%;
+    max-width: 38%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(253, 252, 252, 0.65);
+    border-radius: 50px;
+
+}
+.barradebusqueda i{
+    font-size: 25px;
+    left: -3px;
+    padding: 0 5px;
+    color: #111;
+    text-align: center;
+    opacity: 0.8;
+    
+}
+.barradebusqueda:hover i{
+    opacity: 1;
+}
+.barradebusqueda input{
+    width: 88%;
+    height: 70%;
+    padding: 0 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-left: 1px solid rgba(61, 61, 61, 0.61);
+}
 .mobmenu{
     width: 30px;
     height: 20px;
     margin-right: 20px;
-    visibility: hidden;
+    display: none;
 }
 .mobmenu::before{
     content: '';
@@ -167,10 +230,11 @@ body.active .mobmenu::after {
     top: 0;
     left: 0;
     width: 100%;
-    height: 64vh;
+    height: calc(64vh + 50px);
+    z-index: 1;
 }
 .mainbanner img{
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -180,51 +244,32 @@ body.active .mobmenu::after {
 
 }
 .cobertura{
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 64vh;
+    height: calc(64vh + 50px);
     background: linear-gradient(180deg,rgba(3, 243, 231, 1),#292b2a);
     mix-blend-mode: multiply;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
-.barradebusqueda{
-    width: 38%;
-    max-width: 38%;
-    height: 35px;
-    margin-top: 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5px;
-    background: rgba(253, 252, 252, 0.558);
-
-}
-.barradebusqueda i{
-    font-size: 28px;
-    padding: 0 5px;
-    color: #111;
-    text-align: center;
-    opacity: 0.8;
-    
-}
-.barradebusqueda:hover i{
-    opacity: 1;
-}
-.barradebusqueda input{
-    width: 90%;
+img.wave{
+    position: absolute;
+    bottom: -2px;
+    top: auto;
+    left: 0;
     height: 70%;
-    padding: 0 8px;
-    background: transparent;
-    border: none;
-    border-left: 1px solid rgba(61, 61, 61, 0.61);
+    width: 100%;
+    filter: contrast(1);
+    z-index: 3;
 }
-
 /*  Menu por departamentos  */
 .envoltura{
-    top: 50px;
+    top: 90px;
     left: -100%;
     width: 100%;
     height: 105vh;
@@ -335,112 +380,57 @@ body.active .mobmenu::after {
     grid-row: 5/6;
 }
 
-/*  Extra  */
-.bannerextra{
-    position: relative;
-    width: 100vw;
-    height: 36vh;
-    display: flex;
-    overflow-x: hidden;
-    background: linear-gradient(270deg,rgba(220, 220, 220, 0.87),white);
-    background-size: 100%;
-}
-.bannerextra .base{
-    position: absolute;
-    left: 70vw;
-    width: 300vw;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    animation: pase 10s linear infinite;
-    animation-delay: 1s;
-}
-.bannerextra .base h2{
-    font-size: 8vw;
-    width: 100vw;
-    text-align: center;
-    position: relative;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    font-weight: 900;
-    line-height: 1em;
-    color: rgba(200, 204, 202, 0.644);
-}
-.bannerextra .base:nth-child(1) h2 span{color: rgba(57, 140, 207, 0.644);}
-.bannerextra .base:nth-child(2) h2 span{color: rgba(32, 178, 171, 0.644);}
-.bannerextra .base:nth-child(3) h2 span{color: rgba(139, 97, 253, 0.63);}
-@keyframes pase{
-    0%{transform: translateX(0vw);}
-    1.2%{transform: translateX(-70vw);}
-    33%{transform: translateX(-70vw);}
-    35%{transform: translateX(-170vw);}
-    66%{transform: translateX(-170vw);}
-    68%{transform: translateX(-270vw);}
-    100%{transform: translateX(-270vw);}
-}
 /*  Frecuentes  */
 
 .coverfrecuentes{
+    position: relative;
     width: 100%;
-    height: 110vh;
-    display: flex;
-    overflow: hidden;
-    background: linear-gradient(270deg,rgba(220, 220, 220, 0.87),white);
+    height: 40vh;
+    background: white;
+    z-index: 1;
 }
-.coverfrecuentes .gsecciones#mensaje{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
+.coverfrecuentes h3{
+    position: absolute;
+    left: 10%;
+    top: -115px;
+    opacity: 0.6;
 }
-.coverfrecuentes .gsecciones#mensaje h2{
-    font-size: 80px;
-    width: 35%;
-    text-align: left;
-    font-family: 'Open Sans Condensed', sans-serif;
-}
-.coverfrecuentes .gsecciones#mensaje span{
-    color:  rgb(57, 140, 207);
-    display: none;
-    width: 100%;
-    padding: auto;
-    font-size: 1.2em;
-    text-align: left;
-}
-.coverfrecuentes .gsecciones#mensaje span:nth-child(1){display: initial;}
-.coverfrecuentes .gsecciones#mensaje span:nth-child(2),
-.coverfrecuentes .gsecciones#mensaje span:nth-child(5){color: rgb(139, 97, 253);}
-.coverfrecuentes .gsecciones#mensaje span:nth-child(3){color: lightseagreen;}
-.coverfrecuentes .gsecciones#mensaje span:nth-child(4){color: rgb(32, 83, 178);}
 .coverfrecuentes .gsecciones.cuadro{
-    width: 50%;
-    grid-row: 1/3;
+    position: relative;
+    top: -110px;
+    left: 10%;
+    width: 80%;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 0.5em;
-    padding: 50px;
-    padding-right: 100px;
+    grid-template-columns: repeat(6,1fr);
+    gap: 0.25em;
+    padding: 50px 0;
 }
 .coverfrecuentes .gsecciones.cuadro article{
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 230px;
+    padding-bottom: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    transition: 0.3s;
 }
-.coverfrecuentes .gsecciones.cuadro article.cables,.coverfrecuentes .gsecciones.cuadro article.caja{
+.coverfrecuentes .gsecciones.cuadro article.cables{
     background: rgb(57, 140, 207);
 }
-.coverfrecuentes .gsecciones.cuadro article.ram,.coverfrecuentes .gsecciones.cuadro article.software{
+.coverfrecuentes .gsecciones.cuadro article.ram,.coverfrecuentes .gsecciones.cuadro article.caja{
     background: rgb(139, 97, 253);
 }
-.coverfrecuentes .gsecciones.cuadro article.discos{
+.coverfrecuentes .gsecciones.cuadro article.discos,.coverfrecuentes .gsecciones.cuadro article.software{
     background: lightseagreen;
 }
 .coverfrecuentes .gsecciones.cuadro article.perifericos{
     background: rgb(32, 83, 178);
+}
+.coverfrecuentes .gsecciones.cuadro article:hover{
+    transform: translateY(-35px);
+    transition: 0.5s;
 }
 .coverfrecuentes .gsecciones.cuadro article:hover img{
     opacity: 0.5;
@@ -450,11 +440,29 @@ body.active .mobmenu::after {
     width: 55%;
     height: 55%;
     opacity: 0.3;
+    transition: 0.3s;
+}
+.coverfrecuentes .gsecciones.cuadro article .con{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 33%;
+    color: white;
+    background: transparent;
+    padding: 5px 10px;
+    border-radius: 0 0 5px 5px;
+}
+.coverfrecuentes .gsecciones.cuadro article .con h4{
+    font-size: 20px;
+}
+.coverfrecuentes .gsecciones.cuadro article .con p{
+    opacity: 0.9;
 }
 
 
 /*  Banners  */
 .banners{
+    position: relative;
     width: 100%;
     height: auto;
 }
@@ -557,12 +565,10 @@ section:nth-child(1) .content .cuadros .box.end .imgbox,section:nth-child(2) .co
     background: transparent;
 }
 
-section .content .cuadros .box:nth-child(2n + 2) .imgbox{
+section .content .cuadros .box .imgbox{
     background: none;
 }
-section .content .cuadros .box:nth-child(2n + 1) .imgbox{
-    background: none;
-}
+
 section .content .cuadros .box .contentbox{
     position: absolute;
     width: 100%;
@@ -675,7 +681,7 @@ footer div{
 footer div ul{
     list-style: none;
     line-height: 25px;
-    font-size: 7px;
+    font-size: 12px;
 }
 footer div ul h4,.social h4{
     font-size: 19px;
@@ -699,6 +705,9 @@ footer div ul h4,.social h4{
     row-gap: 0.1em;
     margin-bottom: 10px;
 }
+.social img{
+    filter: saturate(0) contrast(1.5);
+}
 #firma{
     position: relative;
     width: 100vw;
@@ -713,20 +722,32 @@ footer div ul h4,.social h4{
 /*  Responsive  */
 
 @media(max-width: 425px){
+    body{
+        position: absolute;
+    }
     body.active{
         transform: translateX(-35vw);
         transition: 0.5s;
         overflow-y: hidden;
     }
     .mobmenu{
+        display: block;
         visibility: visible;
         margin-right: 0;
     }
     nav{
+        height: 80px;
         width: 100vw;
         padding: 0 15px;
     }
+    nav .logo{
+        left: 10px;
+    }
+    .bargris{
+        top: 80px;
+    }
     .opciones{
+        position: absolute;
         top: 0;
         left: 100vw;
         display: flex;
@@ -744,6 +765,9 @@ footer div ul h4,.social h4{
         display: flex;
         flex-direction: column;  
     }
+    .opciones li ul p{
+        display: none;
+    }
     .opciones li p,.opciones li a{
         position: relative;
         height: 50px;
@@ -751,22 +775,22 @@ footer div ul h4,.social h4{
         justify-content: center;
         align-items: center;
     }
-    .opciones li.sub.show::before{
-        top: 36px;
-        border-bottom-color: rgb(9, 153, 146);
-    }
     nav ul.opciones li ul.desplegable{
         position: relative;
         height: auto;
         top: 0;
         left: 0;
         width: 100%;
-        background: rgb(9, 153, 146);
-        border-radius: 0 0 5px 5px;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
         display: none;
         padding: 10px 0;
         font-size: 10px;
         transition: 0.8s;
+    }
+    nav ul.opciones li.show:nth-child(6) ul.desplegable{
+        left: 0;
     }
     nav ul.opciones li.show ul.desplegable li{
         width: 100%;
@@ -784,14 +808,10 @@ footer div ul h4,.social h4{
         left: -15px;
     }
     .barradebusqueda{
-        border-radius: 10px;
+        left: -20px;
+        border-radius: 20px;
+        padding: 0 8px;
         max-width: 70%;
-    }
-    .bannerextra{
-        width: 100vw;
-    }
-    .bannerextra .base h2{
-        font-size: 15vw;
     }
     section.banner, section.banner:nth-child(2){
         flex-direction: column;
@@ -818,16 +838,17 @@ footer div ul h4,.social h4{
     section.banner .content .cuadros{
         width: 80%;
     }
-    .coverfrecuentes .gsecciones#mensaje h2{
-        font-size: 40px;
-        left: -40px;
-    }
-    .coverfrecuentes .gsecciones#mensaje span{
-        transform: translate(0,0);
+    .coverfrecuentes{
+        height: auto;
     }
     .coverfrecuentes .gsecciones.cuadro{
-        padding: 50px 0;
-        left: -15px;
+        width: 90%;
+        left: 5%;
+        grid-template-columns: repeat(3,1fr);
+        top: -70px;
+    }
+    .coverfrecuentes h3{
+        top: -75px;
     }
     footer{
         flex-wrap: wrap;
