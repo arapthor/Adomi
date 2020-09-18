@@ -880,8 +880,8 @@ footer div ul h4,.social h4{
     }   
 }
 @media(max-width: 380px){
-    .coverfrecuentes .gsecciones#mensaje h2{
-        font-size: 35px;
+    .coverfrecuentes .gsecciones.cuadro{
+        grid-template-columns: repeat(2,1fr);
     }
     .departamentos{
         gap: 0;
