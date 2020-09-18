@@ -847,7 +847,7 @@ footer div ul h4,.social h4{
     .coverfrecuentes .gsecciones.cuadro{
         width: 70%;
         left: 5%;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(2,1fr);
         top: -70px;
     }
     .coverfrecuentes h3{
