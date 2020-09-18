@@ -11,6 +11,7 @@ html{
 body{
     top: 0;
     height: 100%;
+    width: 100vw;
     padding: 0;
     margin: 0;
     background: url(./hideout.svg);
@@ -166,7 +167,7 @@ nav .depboton:hover i,nav .depboton.show i{
     align-items: center;
     background: rgba(253, 252, 252, 0.65);
     border-radius: 50px;
-
+    mix-blend-mode: screen;
 }
 .barradebusqueda i{
     font-size: 25px;
@@ -174,11 +175,7 @@ nav .depboton:hover i,nav .depboton.show i{
     padding: 0 5px;
     color: #111;
     text-align: center;
-    opacity: 0.8;
     
-}
-.barradebusqueda:hover i{
-    opacity: 1;
 }
 .barradebusqueda input{
     width: 88%;
@@ -398,7 +395,7 @@ img.wave{
 .coverfrecuentes .gsecciones.cuadro{
     position: relative;
     top: -110px;
-    left: 10%;
+    margin: 0 10%;
     width: 80%;
     display: grid;
     grid-template-columns: repeat(6,1fr);
@@ -724,9 +721,6 @@ footer div ul h4,.social h4{
 @media(max-width: 425px){
     body{
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
     }
     body.active{
         transform: translateX(-35vw);
@@ -845,9 +839,9 @@ footer div ul h4,.social h4{
         height: auto;
     }
     .coverfrecuentes .gsecciones.cuadro{
-        width: 70%;
-        left: 5%;
-        grid-template-columns: repeat(2,1fr);
+        width: 90%;
+        margin: 0 5%;
+        grid-template-columns: repeat(3,1fr);
         top: -70px;
     }
     .coverfrecuentes h3{
@@ -884,7 +878,10 @@ footer div ul h4,.social h4{
 }
 @media(max-width: 380px){
     .coverfrecuentes .gsecciones.cuadro{
+        width: 90%;
+        margin: 0 5%;
         grid-template-columns: repeat(2,1fr);
+        top: -70px;
     }
     .departamentos{
         gap: 0;
