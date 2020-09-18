@@ -810,6 +810,9 @@ footer div ul h4,.social h4{
         padding: 0 8px;
         max-width: 70%;
     }
+    .coverfrecuentes .gsecciones.cuadro article{
+        height: 240px;
+    }
     section.banner, section.banner:nth-child(2){
         flex-direction: column;
     }
@@ -845,7 +848,7 @@ footer div ul h4,.social h4{
         top: -70px;
     }
     .coverfrecuentes h3{
-        top: -75px;
+        top: -80px;
     }
     footer{
         flex-wrap: wrap;
