@@ -52,7 +52,6 @@ nav{
 .logo{
     position: relative;
     left: 20px;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 35px;
     letter-spacing: 1.2px;
     font-weight: 800;
@@ -60,7 +59,6 @@ nav{
     z-index: 1;
 }
 .opciones{
-    font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 17px;
     letter-spacing: 1px;
     font-weight: 500;
@@ -220,6 +218,29 @@ body.active .mobmenu::after {
     transform: translate(-50%,-50%) rotate(-45deg);
     transition: 0.5s;
 }
+.backtop{
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    font-size: 45px;
+    font-weight: 800;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;    
+    background: rgba(37, 37, 37,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    backdrop-filter: blur(2px);
+    opacity: 0;
+}
+.backtop i{
+    position: relative;
+    transform: rotate(90deg);
+    left: 2px;
+    top: -2px;
+}
 /*  Header-Banner Principal  */
 
 .mainbanner{
@@ -239,14 +260,15 @@ body.active .mobmenu::after {
     object-fit: cover;
     filter: saturate(0) contrast(0.6);
 
-}
+}    
+
 .cobertura{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: calc(64vh + 50px);
-    background: linear-gradient(180deg,rgba(3, 243, 231, 1),#292b2a);
+    background: linear-gradient(180deg,rgb(30, 148, 245),rgba(30, 148, 245,.8),#292b2a);
     mix-blend-mode: multiply;
     display: flex;
     flex-direction: column;
@@ -392,6 +414,21 @@ img.wave{
     top: -115px;
     opacity: 0.6;
 }
+.coverfrecuentes span{
+    content: '';
+    width: 0;
+    height: 0;
+    border: 8px lightskyblue solid;
+    border-radius: 50%;
+    position: absolute;
+    left: 25%;
+    top: -115px;
+    z-index: 3;
+    animation: color 2s infinite;
+}
+@keyframes color{
+    50%{border-color: rgb(15, 15, 15);}
+}
 .coverfrecuentes .gsecciones.cuadro{
     position: relative;
     top: -110px;
@@ -412,17 +449,18 @@ img.wave{
     align-items: center;
     border-radius: 5px;
     transition: 0.3s;
+    background: rgb(37, 37, 37);
 }
-.coverfrecuentes .gsecciones.cuadro article.cables{
+.coverfrecuentes .gsecciones.cuadro.color article.cables{
     background: rgb(57, 140, 207);
 }
-.coverfrecuentes .gsecciones.cuadro article.ram,.coverfrecuentes .gsecciones.cuadro article.caja{
+.coverfrecuentes .gsecciones.cuadro.color article.ram,.coverfrecuentes .gsecciones.cuadro.color article.caja{
     background: rgb(139, 97, 253);
 }
-.coverfrecuentes .gsecciones.cuadro article.discos,.coverfrecuentes .gsecciones.cuadro article.software{
+.coverfrecuentes .gsecciones.cuadro.color article.discos,.coverfrecuentes .gsecciones.cuadro.color article.software{
     background: lightseagreen;
 }
-.coverfrecuentes .gsecciones.cuadro article.perifericos{
+.coverfrecuentes .gsecciones.cuadro.color article.perifericos{
     background: rgb(32, 83, 178);
 }
 .coverfrecuentes .gsecciones.cuadro article:hover{
@@ -678,7 +716,7 @@ footer div{
 footer div ul{
     list-style: none;
     line-height: 25px;
-    font-size: 12px;
+    font-size: 16px;
 }
 footer div ul h4,.social h4{
     font-size: 19px;
@@ -751,7 +789,7 @@ footer div ul h4,.social h4{
         flex-direction: column;
         width: 35vw;
         height: 100vh;
-        background: lightseagreen;
+        background: rgb(57, 140, 207);
         overflow-y: hidden;
     }
     .opciones li{
@@ -850,12 +888,22 @@ footer div ul h4,.social h4{
     .coverfrecuentes h3{
         top: -80px;
     }
+    .coverfrecuentes span{
+        left: 90%;
+        top: -80px;
+    }
+    .coverfrecuentes .gsecciones.cuadro article:hover{
+        border-top: white solid 1px;
+    }
     footer{
         flex-wrap: wrap;
         padding: 50px 5%;
     }
     footer div{
         width: 100%;
+    }
+    footer div ul{
+        font-size: 12px;
     }
     .social{
         width: 100%;
@@ -875,8 +923,7 @@ footer div ul h4,.social h4{
 @media(max-width: 410px){
     footer div ul li{
         width: 80px;
-        margin-bottom: 7px;
-        
+        margin-bottom: 7px; 
     }   
 }
 @media(max-width: 380px){

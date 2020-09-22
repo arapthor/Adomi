@@ -11,14 +11,6 @@
     <!--Font awesome-->
     <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    
-<!--<i class="fa fa-plus" aria-hidden="true"></i>
-<i class="fa fa-bars" aria-hidden="true"></i>
-<i class="fa fa-align-justify" aria-hidden="true"></i>
-<i class="fa fa-align-left" aria-hidden="true"></i>
-<i class="fa fa-angle-left" aria-hidden="true"></i>
--->
-
 </head>
 <body>
     <!--   Cabecera y navegador-->    
@@ -207,7 +199,7 @@
 
 <!--  Frecuentes -->
     <div class="coverfrecuentes" >
-        <h3>Frequent searches</h3>
+        <h3>Frequent searches</h3><span></span>
         <section class="gsecciones cuadro">
             <article class="cables"><img src="iconos/025-cable.svg" alt="Cables"><div class="con">
                 <h4>Cables</h4>
@@ -517,8 +509,8 @@
         </div>
         <p id="firma">Created by arapthor</p>
     </footer>
-<!-- (final) Frecuentes -->
-
+<!-- (final) Footer -->
+<a href="#" class="backtop"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
 <!-- Script-->
 <script src="js/adomi-index.js" type="text/javascript" async></script>
 <script src="js/jquery-3.4.1.min.js" type="text/javascript" async></script> 
@@ -534,7 +526,8 @@
         var $navegador = $('nav')
         var $ancho = $win.width();
         var $moboton = $('.mobmenu');
-        var bargris = $('.bargris')
+        var bargris = $('.bargris');
+        var backto = $('.backtop');
         var $altura = $win.scrollTop();
         var value = ($altura/1000)*2.4;
         var trans = 1-value;
@@ -542,13 +535,13 @@
 
         $navegador.css('background', 'rgba(37, 37, 37,'+trans+')');
         bargris.css('opacity', grisi);
+        backto.css('opacity', value);
 
         $win.on('scroll', function () {
             var $altura = $win.scrollTop();
             var value = ($altura/1000)*2.4;
             var trans = 1-value;
             var grisi = 1-(($altura/1000)*4);
-
             var x1=$altura>=0;
             var y1=$altura<=250; 
             if(x1&&y1) {
@@ -557,7 +550,9 @@
             }else{
                 $navegador.css('background', 'rgba(37, 37, 37,0.4)');
                 bargris.css('opacity', '0');
-            }            
+            }
+            backto.css('opacity', value);
+            
         })
 
         if ($ancho <= 425) {
