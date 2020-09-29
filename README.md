@@ -1,2 +1,4 @@
 # Adomi-productos
-Productos informaticos adomicilio
+Adomi-Productos / Diseño web
+
+![newd](https://raw.githubusercontent.com/arapthor/Adomi-productos/master/adomi.png
